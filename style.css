@@ -184,6 +184,13 @@ footer {
   .nav-menu li a {
     font-size: 14px;
   }
+  /* New background color adjustments for medium screens */
+  header {
+    background-color: #2980b9; /* calm blue for trust and reliability */
+  }
+  footer {
+    background-color: #2980b9;
+  }
 }
 
 @media (max-width: 480px) {
@@ -198,5 +205,15 @@ footer {
   }
   .nav-menu li {
     margin: 5px 0;
+  }
+  /* New background color adjustments for small screens */
+  header {
+    background-color: #e74c3c; /* vibrant red for energy and urgency */
+  }
+  footer {
+    background-color: #e74c3c;
+  }
+  body {
+    background-color: #fdf6e3; /* warm, light background for contrast */
   }
 }
