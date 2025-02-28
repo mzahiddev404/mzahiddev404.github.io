@@ -20,43 +20,58 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f0f0f0;
+  font-size: 16px;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
-  background-color: #333;
+  background-color: #2c3e50;
   color: #fff;
   padding: 20px;
   text-align: center;
 }
 
-header h1 {
+/* Center the header content */
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Style the header content */
+.header-content h1 {
   margin: 0;
   font-size: 36px;
 }
 
+.header-content p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Center the main content */
 main {
   max-width: 800px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
+/* Style the sections */
 section {
   margin-bottom: 40px;
 }
 
 section h2 {
-  color: #333;
+  color: #2c3e50;
 }
 
+/* Style the lists */
 ul {
   list-style-type: none;
   padding: 0;
@@ -67,7 +82,7 @@ li {
 }
 
 li a {
-  color: #007bff;
+  color: #3498db;
   text-decoration: none;
 }
 
@@ -75,8 +90,47 @@ li a:hover {
   text-decoration: underline;
 }
 
+/* Style the skills section */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-list li {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.skill-list li img {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+/* Style the contact section */
+.contact-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin: 0 10px;
+}
+
+.contact-link {
+  display: block;
+  text-decoration: none;
+}
+
+.contact-link img {
+  max-width: 50px;
+}
+
 footer {
-  background-color: #333;
+  background-color: #2c3e50;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -84,5 +138,50 @@ footer {
 }
 
 /******************************************
-/* ADDITIONAL STYLES
+/* RESPONSIVE STYLES
 /*******************************************/
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  body {
+    font-size: 14px;
+  }
+
+  .header-content h1 {
+    font-size: 28px;
+  }
+
+  .header-content p {
+    font-size: 16px;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  .skill-list li img {
+    max-width: 80px;
+    margin-right: 8px;
+  }
+
+  .contact-link img {
+    max-width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust styles for even smaller screens */
+  .header-content h1 {
+    font-size: 24px;
+  }
+
+  .header-content p {
+    font-size: 14px;
+  }
+
+  .skill-list li img {
+    max
