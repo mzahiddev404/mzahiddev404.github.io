@@ -48,7 +48,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-    position: sticky;
+  position: sticky;
   top: 0;
   z-index: 100; /* Ensure the navigation bar stays on top */
 }
@@ -86,10 +86,6 @@ header {
   padding: 60px 0;
   text-align: center;
 }
-.header-content {
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
 .header-content h1 {
   margin: 0;
   font-size: 36px;
@@ -98,7 +94,15 @@ header p {
   margin: 10px 0 0;
   font-size: 20px;
 }
-/* animation experimentation*/
+/******************************************
+/* AMINATION */
+/*******************************************/
+.header-content {
+  /* Fade-in animation for the header content */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+/* Animation experimentation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -109,7 +113,6 @@ header p {
     transform: translateY(0);
   }
 }
-
 
 
 /******************************************
@@ -200,23 +203,85 @@ footer {
 /******************************************
 /* RESPONSIVE STYLES
 /*******************************************/
+
+/* Styles for screens up to 768px wide */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
   }
+
+/******************************************
+/* RESPONSIVE STYLES: HEADER
+/*******************************************/
   header h1 {
     font-size: 28px;
   }
   header p {
     font-size: 18px;
   }
+
+/******************************************
+/* RESPONSIVE STYLES: NAVIGATION
+/*******************************************/
   .nav-menu li {
     margin-left: 10px;
   }
   .nav-menu li a {
     font-size: 14px;
   }
-  /* New background color adjustments for medium screens */
+  .nav-toggle {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-toggle-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    padding: 20px 0;
+  }
+  .nav-menu.show {
+    display: flex;
+  }
+  .nav-menu li {
+    margin: 10px 0;
+  }
+  @media (max-width: 768px) {
+    .nav-menu li ul {
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+  
+    .nav-menu li ul li {
+      padding: 5px 0;
+    }
+  }
+  
+/******************************************
+/* RESPONSIVE STYLES: ABOUT SECTION
+/*******************************************/
+.about-content {
+    flex-direction: column; /* Stack the image and text vertically */
+  }
+  .about-image {
+    margin-bottom: 20px; /* Add some spacing between the image and text */
+  }
+
+  /******************************************
+  /* BACKGROUND COLORS
+  /*******************************************/
   header {
     background-color: #2980b9; /* calm blue for trust and reliability */
   }
@@ -225,20 +290,46 @@ footer {
   }
 }
 
+/* Styles for screens up to 480px wide */
 @media (max-width: 480px) {
+  /******************************************
+  /* HEADER
+  /*******************************************/
   header h1 {
     font-size: 24px;
   }
   header p {
     font-size: 16px;
   }
-  .nav-menu {
-    flex-direction: column;
+
+  /******************************************
+  /* NAVIGATION DROPDOWN MENU
+  /*******************************************/
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #2c3e50;
+      padding: 20px 0;
+    }
+  
+    .nav-menu.show {
+      display: flex;
+    }
+  
+    .nav-menu li {
+      margin: 10px 0;
+    }
   }
-  .nav-menu li {
-    margin: 5px 0;
-  }
-  /* New background color adjustments for small screens */
+    
+
+  /******************************************
+  /* BACKGROUND COLORS
+  /*******************************************/
   header {
     background-color: #e74c3c; /* vibrant red for energy and urgency */
   }
@@ -248,6 +339,14 @@ footer {
   body {
     background-color: #fdf6e3; /* warm, light background for contrast */
   }
+
+  /******************************************
+  /* ABOUT SECTION
+  /*******************************************/
+  .about-content {
+    flex-direction: column; /* Stack the image and text vertically */
+  }
+  .about-image {
+    margin-bottom: 20px; /* Add some spacing between the image and text */
+  }
 }
-
-
