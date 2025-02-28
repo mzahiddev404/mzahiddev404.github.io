@@ -48,6 +48,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+    position: sticky;
+  top: 0;
+  z-index: 100; /* Ensure the navigation bar stays on top */
 }
 .navbar .logo a {
   text-decoration: none;
@@ -122,6 +125,7 @@ li {
   margin-bottom: 10px;
 }
 
+/* Add spacing and border between sections */
 section {
   border-bottom: 1px solid #ccc; /* Light gray line */
   padding-bottom: 20px; /* Space below the section */
@@ -149,6 +153,7 @@ h1, h2, p ,li{
 .contact-list {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Allow contact links to wrap to the next line if needed */
   margin: 0;
   padding: 0;
 }
@@ -160,8 +165,9 @@ h1, h2, p ,li{
   text-decoration: none;
 }
 .contact-link img {
-  max-width: 50px;
+  max-width: 60px;
 }
+
 
 /******************************************
 /* FOOTER
