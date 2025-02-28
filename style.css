@@ -122,6 +122,15 @@ li {
   margin-bottom: 10px;
 }
 
+section {
+  border-bottom: 1px solid #ccc; /* Light gray line */
+  padding-bottom: 20px; /* Space below the section */
+  margin-bottom: 20px; /* Space above the next section */
+}
+h1, h2, p ,li{
+  margin: 20px; /* Added to Adjust the text from not being off screen (debugging...) */
+}
+
 /******************************************
 /* SKILLS SECTION
 /*******************************************/
@@ -217,3 +226,4 @@ footer {
     background-color: #fdf6e3; /* warm, light background for contrast */
   }
 }
+
