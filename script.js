@@ -63,3 +63,36 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+
+  /******************************************
+  /* HIGHLIGHT CURRENT SECTION
+  /* Highlights the active nav link based on scroll position.
+  /*******************************************/
+  function highlightCurrentSection() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    let currentSection = null;
+    sections.forEach(section => {
+      if (window.pageYOffset >= section.offsetTop - 100) {
+        currentSection = section;
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (currentSection && link.getAttribute('href') === `#${currentSection.id}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  /******************************************
+  /* NAV LINK HOVER EFFECT
+  /* Changes the nav link color on hover for visual feedback.
+  /*******************************************/
+  function addNavLinkHoverEffect() {
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+      link.addEventListener('mouseover', () => link.style.color = '#3498db');
+      link.addEventListener('mouseout', () => link.style.color = '#fff');
+    });
+  }
