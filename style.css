@@ -67,18 +67,18 @@ body {
   padding: 0;
   position: relative; /* Needed for the dropdown menu positioning */
 }
-.nav-menu li {
+.nav-menu > li {
   margin-left: 20px;
   position: relative; /* Needed for the dropdown menu positioning */
 }
-.nav-menu li a {
+.nav-menu > li > a {
   color: #fff;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
   padding: 10px; /* Add some padding to the nav links */
 }
-.nav-menu li a:hover {
+.nav-menu > li > a:hover {
   color: #3498db; /* Change the link color on hover */
 }
 
@@ -92,6 +92,7 @@ body {
   padding: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
   z-index: 1; /* Ensure the dropdown menu is on top of other elements */
+  min-width: 200px; /* Set a minimum width for the dropdown menu */
 }
 .nav-menu li:hover > ul {
   display: block; /* Show the dropdown menu on hover */
@@ -104,6 +105,7 @@ body {
   color: #fff;
   font-size: 14px; /* Slightly smaller font size for the dropdown menu links */
   transition: color 0.3s ease;
+  display: block; /* Ensure the entire dropdown menu item is clickable */
 }
 .nav-menu li ul li a:hover {
   color: #3498db; /* Change the dropdown menu link color on hover */
@@ -256,10 +258,10 @@ footer {
 /*******************************************/
 @media (max-width: 768px) {
   /* Styles for the navigation menu on smaller screens */
-  .nav-menu li {
+  .nav-menu > li {
     margin-left: 10px;
   }
-  .nav-menu li a {
+  .nav-menu > li > a {
     font-size: 14px;
   }
   .nav-toggle {
@@ -286,21 +288,13 @@ footer {
   .nav-menu.show {
     display: flex;
   }
-  .nav-menu li {
+  .nav-menu > li {
     margin: 10px 0;
   }
 
   /* Styles for the navigation dropdown menu on smaller screens */
-  @media (max-width: 768px) {
-    .nav-menu li ul {
-      position: static;
-      background-color: transparent;
-      box-shadow: none;
-      padding: 0;
-    }
-
-    .nav-menu li ul li {
-      padding: 5
+  .nav-menu li ul {
+    position: static;
   
 /******************************************
 /* RESPONSIVE STYLES: ABOUT SECTION
