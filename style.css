@@ -110,6 +110,7 @@ body {
 .nav-menu li ul li a:hover {
   color: #3498db; /* Change the dropdown menu link color on hover */
 }
+
 /******************************************
 /* HEADER
 /*******************************************/
@@ -127,15 +128,15 @@ header p {
   margin: 10px 0 0;
   font-size: 20px;
 }
+
 /******************************************
-/* AMINATION */
+/* ANIMATION
 /*******************************************/
 .header-content {
   /* Fade-in animation for the header content */
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
 }
-/* Animation experimentation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -146,7 +147,6 @@ header p {
     transform: translateY(0);
   }
 }
-
 
 /******************************************
 /* MAIN CONTENT
@@ -184,8 +184,8 @@ section {
   padding-bottom: 20px; /* Space below the section */
   margin-bottom: 20px; /* Space above the next section */
 }
-h1, h2, p ,li{
-  margin: 20px; /* Added to Adjust the text from not being off screen (debugging...) */
+h1, h2, p, li {
+  margin: 20px; /* Adjust text spacing (debugging...) */
 }
 
 /******************************************
@@ -206,7 +206,7 @@ h1, h2, p ,li{
 .contact-list {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Allow contact links to wrap to the next line if needed */
+  flex-wrap: wrap; /* Allow contact links to wrap */
   margin: 0;
   padding: 0;
 }
@@ -220,7 +220,6 @@ h1, h2, p ,li{
 .contact-link img {
   max-width: 60px;
 }
-
 
 /******************************************
 /* FOOTER
@@ -242,22 +241,18 @@ footer {
   body {
     font-size: 14px;
   }
-
-/******************************************
-/* RESPONSIVE STYLES: HEADER
-/*******************************************/
+  /******************************************
+  /* RESPONSIVE STYLES: HEADER
+  /*******************************************/
   header h1 {
     font-size: 28px;
   }
   header p {
     font-size: 18px;
   }
-
-/******************************************
-/* RESPONSIVE STYLES: NAVIGATION
-/*******************************************/
-@media (max-width: 768px) {
-  /* Styles for the navigation menu on smaller screens */
+  /******************************************
+  /* RESPONSIVE STYLES: NAVIGATION
+  /*******************************************/
   .nav-menu > li {
     margin-left: 10px;
   }
@@ -291,26 +286,24 @@ footer {
   .nav-menu > li {
     margin: 10px 0;
   }
-
-  /* Styles for the navigation dropdown menu on smaller screens */
+  /* Navigation Dropdown remains unchanged */
   .nav-menu li ul {
     position: static;
-  
-/******************************************
-/* RESPONSIVE STYLES: ABOUT SECTION
-/*******************************************/
-.about-content {
+  }
+  /******************************************
+  /* RESPONSIVE STYLES: ABOUT SECTION
+  /*******************************************/
+  .about-content {
     flex-direction: column; /* Stack the image and text vertically */
   }
   .about-image {
-    margin-bottom: 20px; /* Add some spacing between the image and text */
+    margin-bottom: 20px; /* Spacing between image and text */
   }
-
   /******************************************
-  /* BACKGROUND COLORS
+  /* RESPONSIVE STYLES: BACKGROUND COLORS
   /*******************************************/
   header {
-    background-color: #2980b9; /* calm blue for trust and reliability */
+    background-color: #2980b9; /* Calm blue for trust and reliability */
   }
   footer {
     background-color: #2980b9;
@@ -320,7 +313,7 @@ footer {
 /* Styles for screens up to 480px wide */
 @media (max-width: 480px) {
   /******************************************
-  /* HEADER
+  /* RESPONSIVE STYLES: HEADER
   /*******************************************/
   header h1 {
     font-size: 24px;
@@ -328,52 +321,17 @@ footer {
   header p {
     font-size: 16px;
   }
-
   /******************************************
-  /* NAVIGATION DROPDOWN MENU
-  /*******************************************/
-  @media (max-width: 768px) {
-    .nav-menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #2c3e50;
-      padding: 20px 0;
-    }
-  
-    .nav-menu.show {
-      display: flex;
-    }
-  
-    .nav-menu li {
-      margin: 10px 0;
-    }
-  }
-    
-
-  /******************************************
-  /* BACKGROUND COLORS
+  /* RESPONSIVE STYLES: BACKGROUND COLORS
   /*******************************************/
   header {
-    background-color: #e74c3c; /* vibrant red for energy and urgency */
+    background-color: #e74c3c; /* Vibrant red for energy and urgency */
   }
   footer {
     background-color: #e74c3c;
   }
   body {
-    background-color: #fdf6e3; /* warm, light background for contrast */
+    background-color: #fdf6e3; /* Warm, light background for contrast */
   }
-
-  /******************************************
-  /* ABOUT SECTION
-  /*******************************************/
-  .about-content {
-    flex-direction: column; /* Stack the image and text vertically */
-  }
-  .about-image {
-    margin-bottom: 20px; /* Add some spacing between the image and text */
-  }
+  /* Note: Navigation and About Section styles are inherited from the 768px query */
 }
