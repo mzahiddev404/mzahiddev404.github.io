@@ -223,6 +223,8 @@ footer {
 /******************************************
 /* RESPONSIVE STYLES: NAVIGATION
 /*******************************************/
+@media (max-width: 768px) {
+  /* Styles for the navigation menu on smaller screens */
   .nav-menu li {
     margin-left: 10px;
   }
@@ -256,6 +258,8 @@ footer {
   .nav-menu li {
     margin: 10px 0;
   }
+
+  /* Styles for the navigation dropdown menu on smaller screens */
   @media (max-width: 768px) {
     .nav-menu li ul {
       position: static;
@@ -263,11 +267,9 @@ footer {
       box-shadow: none;
       padding: 0;
     }
-  
+
     .nav-menu li ul li {
-      padding: 5px 0;
-    }
-  }
+      padding: 5
   
 /******************************************
 /* RESPONSIVE STYLES: ABOUT SECTION
