@@ -96,3 +96,32 @@ document.addEventListener('DOMContentLoaded', function() {
       link.addEventListener('mouseout', () => link.style.color = '#fff');
     });
   }
+
+  /******************************************
+  /* CLOSE MENU ON LINK CLICK
+  /* Closes the nav menu and resets the overlay when any nav link is clicked.
+  /*******************************************/
+  function addNavMenuCloseOnLinkClick() {
+    const navMenuLinks = document.querySelectorAll('.nav-menu a');
+    navMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.remove('show');
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+      });
+    });
+  }
+
+  /******************************************
+  /* INITIALIZATION
+  /* Runs all functions to set up the page behavior.
+  /*******************************************/
+  toggleMobileNavigation();
+  addSmoothScrolling();
+  highlightCurrentSection();
+  addNavLinkHoverEffect();
+  addNavMenuCloseOnLinkClick();
+  window.addEventListener('scroll', highlightCurrentSection);
+
+});
