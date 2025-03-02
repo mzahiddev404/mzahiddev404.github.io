@@ -1,67 +1,65 @@
 // script.js
+
 document.addEventListener('DOMContentLoaded', function() {
-  // This function handles the toggling of the mobile navigation menu
-  // When the user clicks the nav toggle button, the nav menu will show or hide
+
+  /******************************************
+  /* OVERLAY SETUP
+  /* Creates an overlay to dim the background when the nav menu is active.
+  /*******************************************/
+  const overlay = document.createElement('div');
+  overlay.id = 'overlay';
+  Object.assign(overlay.style, {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    opacity: '0',
+    transition: 'opacity 0.3s ease',
+    zIndex: '90', // behind the nav menu (nav menu z-index: 100)
+    pointerEvents: 'none'
+  });
+  document.body.appendChild(overlay);
+
+  /******************************************
+  /* MOBILE NAVIGATION
+  /* Toggles the nav menu and overlay when the nav toggle is clicked.
+  /*******************************************/
   function toggleMobileNavigation() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('show');
+      if (navMenu.classList.contains('show')) {
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+      } else {
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+      }
+    });
+
+    // Clicking on the overlay closes the nav menu and resets the overlay.
+    overlay.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      overlay.style.opacity = '0';
+      overlay.style.pointerEvents = 'none';
     });
   }
 
-  // This function adds smooth scrolling to the section anchor links
-  // When the user clicks a nav link, the page will smoothly scroll to that section
+  /******************************************
+  /* SMOOTH SCROLLING
+  /* Scrolls smoothly to the targeted section when a nav link is clicked.
+  /*******************************************/
   function addSmoothScrolling() {
     const sectionLinks = document.querySelectorAll('a[href^="#"]');
-
     sectionLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+        const targetElement = document.querySelector(this.getAttribute('href'));
         targetElement.scrollIntoView({ behavior: 'smooth' });
       });
     });
   }
-
-  // This function highlights the current section in the navigation menu
-  // As the user scrolls, the nav link for the visible section will be highlighted
-  function highlightCurrentSection() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-
-    let currentSection = null;
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (window.pageYOffset >= sectionTop - 100) {
-        currentSection = section;
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (currentSection && link.getAttribute('href') === `#${currentSection.id}`) {
-        link.classList.add('active');
-      }
-    });
-  }
-
-  // Call the functions to initialize the features
-  toggleMobileNavigation();
-  addSmoothScrolling();
-  highlightCurrentSection();
-
-  // Add a color-changing effect to the navigation links on hover
-  // This makes the nav links more visually appealing and interactive
-  const navLinks = document.querySelectorAll('.nav-menu a');
-  navLinks.forEach(link => {
-    link.addEventListener('mouseover', () => {
-      link.style.color = '#3498db'; // Change the color to a light blue on hover
-    });
-    link.addEventListener('mouseout', () => {
-      link.style.color = '#fff'; // Change the color back to white when the mouse leaves the link
-    });
-  });
-});
