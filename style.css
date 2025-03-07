@@ -46,7 +46,7 @@ body {
 }
 .navbar .container {
   display: flex;
-  align-items: center;
+  align-items: center; /* Center items vertically */
   justify-content: space-between;
   position: sticky;
   top: 0;
@@ -58,6 +58,17 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+
+.navbar .logo {
+  display: flex;
+  align-items: center; /* Center logo and text vertically */
+}
+
+.navbar .logo img {
+  height: 50px; /* Set the height of the logo */
+  margin-right: 10px; /* Space between logo and text */
+}
+
 
 /* Navigation Menu Styles */
 .nav-menu {
@@ -258,6 +269,103 @@ h1, h2, p, li {
   box-shadow: 0 0 10px rgba(63, 162, 246, 0.5);
 }
 
+/* added on Hover show text*/
+.contact-link[title] {
+  position: relative;
+}
+
+.contact-link[title]::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #666;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact-link[title]:hover::after {
+  opacity: 1;
+}
+
+
+/******************************************
+/* RESPONSIVE STYLES: CONTACT SECTION
+/*******************************************/
+
+/* Mobile Styles (max-width: 428px) */
+@media (max-width: 428px) {
+  .contact-section {
+    padding: 40px 0;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-list li {
+    margin: 0 10px;
+  }
+
+  .contact-link i {
+    font-size: 1.2rem;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Tablet Styles (min-width: 429px and max-width: 1279px) */
+@media (min-width: 429px) and (max-width: 1279px) {
+  .contact-section {
+    padding: 50px 0;
+  }
+
+  .contact-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+  }
+
+  .contact-list li {
+    margin: 0 12px;
+  }
+
+  .contact-link i {
+    font-size: 1.4rem;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Desktop Styles (min-width: 1280px and max-width: 1919px) */
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .contact-list li {
+    margin: 0 15px;
+  }
+
+  .contact-link i {
+    font-size: 1.6rem;
+    padding: 12px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
 
 /******************************************
 /* FOOTER
@@ -371,5 +479,18 @@ footer {
   body {
     background-color: #fdf6e3; /* Warm, light background for contrast */
   }
-  /* Note: Navigation and About Section styles are inherited from the 768px query */
+  /* Note: Navigation and About Section styles are inherited from the 768px query *
 }
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block; /* Show toggle on mobile */
+    cursor: pointer;
+  }
+
+  .nav-toggle-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom
