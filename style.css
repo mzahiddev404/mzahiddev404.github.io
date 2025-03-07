@@ -145,10 +145,12 @@ header {
   padding: 60px 0;
   text-align: center;
 }
+
 .header-content h1 {
   margin: 0;
   font-size: 36px;
 }
+
 header p {
   margin: 10px 0 0;
   font-size: 20px;
@@ -162,6 +164,7 @@ header p {
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
