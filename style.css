@@ -249,19 +249,19 @@ h1, h2, p, li {
 /* Responsive styles for the hover text box */
 @media (max-width: 768px) {
   .skill-link .skill-tooltip {
-    max-width: 150px;
+    max-width: 200px; /* Increase the maximum width */
+    padding: 10px 15px; /* Increase the padding */
     white-space: normal;
     text-align: center;
-    padding: 6px 10px;
   }
 }
 
 @media (max-width: 480px) {
   .skill-link .skill-tooltip {
-    max-width: 100px;
+    max-width: 150px; /* Increase the maximum width */
+    padding: 8px 12px; /* Increase the padding */
     white-space: normal;
     text-align: center;
-    padding: 6px 10px;
   }
 }
 
