@@ -125,3 +125,54 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', highlightCurrentSection);
 
 });
+
+  /******************************************
+  /* Skills Logo click detail.
+  /*******************************************/
+
+// Set up click event handler for skill links
+document.addEventListener('DOMContentLoaded', () => {
+  const skillLinks = document.querySelectorAll('.skill-link');
+  skillLinks.forEach(link => {
+    link.addEventListener('click', toggleActiveLink);
+  });
+});
+
+// Toggle active link and show/hide tooltip
+function toggleActiveLink() {
+  const skillLinks = document.querySelectorAll('.skill-link');
+  skillLinks.forEach(l => {
+    l.classList.remove('active');
+    l.querySelector('.skill-tooltip').style.display = 'none';
+  });
+  this.classList.add('active');
+  this.querySelector('.skill-tooltip').style.display = 'block';
+  hideTooltipAfterDelay(this);
+  hideTooltipOnBlur(this);
+}
+
+// Hide tooltip after 3 seconds
+function hideTooltipAfterDelay(link) {
+  let tooltipTimeout;
+  clearTimeout(tooltipTimeout);
+  tooltipTimeout = setTimeout(() => {
+    link.querySelector('.skill-tooltip').style.display = 'none';
+  }, 3000);
+}
+
+// Hide tooltip when clicking outside the link
+function hideTooltipOnBlur(link) {
+  link.addEventListener('blur', () => {
+    link.querySelector('.skill-tooltip').style.display = 'none';
+  });
+}
+
+// Hide all tooltips when clicking outside the skills section
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('#skills')) {
+    const skillLinks = document.querySelectorAll('.skill-link');
+    skillLinks.forEach(link => {
+      link.querySelector('.skill-tooltip').style.display = 'none';
+    });
+  }
+});
