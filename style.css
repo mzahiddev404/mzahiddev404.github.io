@@ -283,7 +283,7 @@ h1, h2, p, li {
 
 @media (max-width: 480px) {
   .skill-link .skill-tooltip {
-    max-width: 200px; /* Decrease width */
+    max-width: 150px; /* Decrease width */
     padding: 8px 12px; /* Decrease padding */
     white-space: normal;
     text-align: center;
