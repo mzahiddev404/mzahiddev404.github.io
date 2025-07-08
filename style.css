@@ -215,6 +215,40 @@ section {
 h1, h2, p, li {
   margin: 20px; /* Adjust text spacing (debugging...) */
 }
+/******************************************
+/* CURRENTLY LEARNING SECTION
+/*******************************************/
+.currently-learning {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+}
+
+.currently-learning li {
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.currently-learning li:hover {
+  background-color: #e0e0e0;
+}
+
+/*for high-DPI screens */
+@media (max-width: 480px) {
+  .currently-learning li {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
 
 /******************************************
 /* SKILLS SECTION
