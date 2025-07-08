@@ -218,16 +218,27 @@ h1, h2, p, li {
 /******************************************
 /* CURRENTLY LEARNING SECTION
 /*******************************************/
+
+/* Section heading for Currently Learning */
+.currently-learning-heading {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 20px 0 10px;
+  margin-left: 20px; /* Align with nested <ul> like Salesforce */
+}
+
+/* Flex list styling for badges */
 .currently-learning {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start; /* change from center to left-aligned */
   gap: 1rem;
   padding: 0;
-  margin: 20px 0;
+  margin-left: 40px; /* Align with nested list content */
   list-style: none;
 }
 
+/* Individual tech tag styling */
 .currently-learning li {
   font-size: 1rem;
   background-color: #f0f0f0;
@@ -242,13 +253,14 @@ h1, h2, p, li {
   background-color: #e0e0e0;
 }
 
-/*for high-DPI screens */
+/* Mobile tweak */
 @media (max-width: 480px) {
   .currently-learning li {
     font-size: 0.9rem;
     padding: 6px 10px;
   }
 }
+
 
 /******************************************
 /* SKILLS SECTION
