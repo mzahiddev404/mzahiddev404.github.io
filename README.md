@@ -1,6 +1,6 @@
 # 🌐 Muhammad Zahid | Developer Portfolio
 
-This is my personal portfolio site, built with **HTML**, **CSS**, and **JavaScript**, as part of my ongoing full-stack development journey. I’ve started learning through online resources such as youtube, 100Devs, and I’m preparing for **AZNext Web Developer Program** at ASU (July 2025 cohort).
+This is my personal portfolio site, built with **HTML**, **CSS**, and **JavaScript**, as part of my ongoing full-stack development journey. I’ve started learning through online resources such as youtube, 100Devs, and I’m preparing for **AZNext Web Developer Program** ASU (July 2025 cohort).
 
 Live site: [mzahiddev404.github.io](https://mzahiddev404.github.io)
 
