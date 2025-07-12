@@ -35,6 +35,7 @@ The “Currently Learning” section refused to line up with the rest of the con
 - How inline vs block elements behave
 - The importance of consistent HTML structure
 - The effects of default margin and padding
+- HTML vaidated using https://validator.w3.org/
 
 Eventually I got it working the way I wanted. Small win, but it came with a solid CSS lesson I won’t forget.
 
@@ -65,7 +66,7 @@ Thanks to:
 
 - 100Devs and other free online dev communities
 - GitHub, and the devs who share their solutions
-
+- 
 ---
 
 ## Final Thoughts
