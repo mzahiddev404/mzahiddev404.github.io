@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /******************************************
   /* OVERLAY SETUP
-  /* Creates an overlay to dim the background when the nav menu is active.
+  /* Creates an overlay to dim background when nav menu is active.
   /*******************************************/
   const overlay = document.createElement('div');
   overlay.id = 'overlay';
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Clicking on the overlay closes the nav menu and resets the overlay.
+    // Clicking on overlay closes the nav menu and resets the overlay.
     overlay.addEventListener('click', () => {
       navMenu.classList.remove('show');
       overlay.style.opacity = '0';
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /******************************************
   /* SMOOTH SCROLLING
-  /* Scrolls smoothly to the targeted section when a nav link is clicked.
+  /* SMOOTH SCROLLING to the targeted section when the nav link is clicked.
   /*******************************************/
   function addSmoothScrolling() {
     const sectionLinks = document.querySelectorAll('a[href^="#"]');
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /******************************************
   /* HIGHLIGHT CURRENT SECTION
-  /* Highlights the active nav link based on scroll position.
+  /* Highlights the current active nav link based on scroll position.
   /*******************************************/
   function highlightCurrentSection() {
     const sections = document.querySelectorAll('section');
