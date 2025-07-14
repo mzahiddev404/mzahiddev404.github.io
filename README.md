@@ -10,7 +10,7 @@ Live site: [logmzahid.github.io](https://logmzahid.github.io)
 
 - A responsive portfolio showcasing my background, certifications, current skills, and personal projects
 - Designed to be clean, readable, PC, mobile-friendly, and easy to maintain (with comments for myself)
-- Also used as a place to test out/learn new things, layout tweaks, new HTML tags, JavaScript logic, and anything else I learn or break while learning
+- Also used as a place to test out/learn new things, layout tweaks, new HTML tags, JavaScript logic, and anything else I learn or break while learning - (extensively referenced resources such as MDN and online resources) 
 
 ---
 
@@ -65,6 +65,7 @@ Thanks to:
 
 - 100Devs and other free online dev communities
 - GitHub, and the devs who share their solutions
+- MDN Web Docs 📚 — extensively used for JavaScript and CSS references  
 - 
 ---
 
