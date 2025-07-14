@@ -2,7 +2,7 @@
 
 This is my personal portfolio site, built using **HTML**, **CSS**, and **JavaScript**, as part of my ongoing full-stack development journey. I’ve started learning through online resources such as youtube, 100Devs, and I’m preparing for **AZNext Web Developer Program** ASU (July 2025 cohort) and will update site as I further progress.
 
-Live site: [logmzahid.github.io](https://logmzahid.github.io)
+Live site: [mzahiddev404.github.io](https://mzahiddev404.github.io)
 
 ---
 
