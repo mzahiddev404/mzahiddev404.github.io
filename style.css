@@ -477,6 +477,28 @@ footer {
   text-align: center;
   font-size: 14px;
 }
+/* Back to Top Button */
+.btt-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.btt {
+  background: #4CAF50;      /* fresh green */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btt:hover {
+  background: #388E3C;      /* darker green on hover */
+}
+
 
 /******************************************
 /* RESPONSIVE STYLES
