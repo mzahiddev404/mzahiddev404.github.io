@@ -1,46 +1,72 @@
-/* ========== GLOBAL RESET & BOX MODEL ========== */
-* {
-  box-sizing: border-box; /* Makes width/height include padding + border */
+/* 🎯 STYLE GUIDE - just for my sanity later
+
+Root: all theme stuff (colors, spacing) lives here.
+Typography: h1/h2 = big & bold, p = chill and readable.
+Spacing: use spacing vars, stop hardcoding px everywhere.
+Layout: .container for width stuff, use flex when in doubt.
+Reusables: make small utility classes for stuff I repeat (center, shadow, etc)
+
+KEEP IT CLEAN + EASY TO READ!*/
+
+/******************************************
+/* BASE VARIABLES (easy color management)
+/******************************************/
+
+:root {
+  --clr-bg-main: #f0f0f0;        /* site-wide neutral background */
+  --clr-text-main: #333;         /* clean readable text color */
+  --clr-accent: #00bfa6;         /* vibrant teal for links/hover/buttons */
+
+  /* === large screen theme (desktop) === */
+  --clr-header-lg: #1e3a5f;      /* deep navy-blue, clean and modern */
+  --clr-footer-lg: #1e3a5f;      /* matches header for consistency */
+  --clr-body-lg: #eef3f9;        /* soft bluish-gray — easy on the eyes */
 }
 
-/* Float clearing utilities */
+/* mobile (480px) and tablet (768px) use their own values inside media queries */
+
+/******************************************
+/* GLOBAL RESET + BASE STYLES
+/******************************************/
+
+* {
+  box-sizing: border-box; /* includes padding + border in width/height */
+}
+
 .clearfix::after {
-  content: ".";
+  content: "";
   display: block;
   clear: both;
-  visibility: hidden;
-  height: 0;
-  line-height: 0;
 }
+
 .clear {
   clear: both;
 }
 
-/* ========== BASE STYLES ========== */
 body {
   font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #333;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background-color: var(--clr-body-lg); /* uses root var for large screens */
+  font-size: 16px;
+  color: var(--clr-text-main);
 }
 
-/* General page wrapper */
 .container {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
 }
+/******************************************
+/* NAVIGATION STYLES
+/******************************************/
 
-/* ========== NAVIGATION STYLES ========== */
 .navbar {
-  background-color: #2c3e50;
+  background-color: var(--clr-header-lg); /* pulls from :root */
   color: #fff;
   padding: 10px 0;
 }
 
-/* Navbar flex layout */
 .navbar .container {
   display: flex;
   align-items: center;
@@ -50,52 +76,57 @@ body {
   z-index: 100;
 }
 
-/* Branding/logo */
 .navbar .logo {
   display: flex;
   align-items: center;
 }
-.navbar .logo a {
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-}
+
 .navbar .logo img {
   height: 50px;
   margin-right: 10px;
 }
 
-/* Nav links */
+.navbar .logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .nav-menu {
-  display: flex;
   list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
+  position: relative;
 }
+
 .nav-menu > li {
   margin-left: 20px;
   position: relative;
 }
+
 .nav-menu > li > a {
   color: #fff;
-  font-size: 16px;
   text-decoration: none;
+  font-size: 16px;
   padding: 10px;
   transition: color 0.3s ease;
 }
+
 .nav-menu > li > a:hover {
-  color: #3498db;
+  color: var(--clr-accent);
 }
-/* ========== DROPDOWN NAVIGATION (desktop) ========== */
+
+/* DROPDOWN (for future scalability) */
 .nav-menu li ul {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #2c3e50;
+  background-color: var(--clr-header-lg);
   padding: 10px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1;
   min-width: 200px;
 }
@@ -107,19 +138,23 @@ body {
 .nav-menu li ul li {
   padding: 5px 20px;
 }
+
 .nav-menu li ul li a {
   color: #fff;
   font-size: 14px;
   display: block;
   transition: color 0.3s ease;
 }
-.nav-menu li ul li a:hover {
-  color: #3498db;
-}
 
-/* ========== HEADER SECTION ========== */
+.nav-menu li ul li a:hover {
+  color: var(--clr-accent);
+}
+/******************************************
+/* HEADER + INTRO SECTION
+/******************************************/
+
 header {
-  background-color: #34495e;
+  background-color: var(--clr-header-lg); /* dynamic from :root */
   color: #fff;
   padding: 60px 0;
   text-align: center;
@@ -129,71 +164,75 @@ header {
   margin: 0;
   font-size: 36px;
 }
+
 header p {
-  margin: 10px 0 0;
+  margin-top: 10px;
   font-size: 20px;
 }
 
-/* ========== HEADER FADE-IN ANIMATION ========== */
+/* fade in animation on load */
 .header-content {
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* ========== MAIN CONTENT BASE ========== */
+/******************************************
+/* MAIN SECTION
+/******************************************/
+
 main {
   padding: 40px 0;
 }
 
-/* Section titles */
+/* Headings for sections */
 section h2 {
-  color: #2c3e50;
+  color: var(--clr-dark);
   font-size: 28px;
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* Body text + spacing */
 section p {
   line-height: 1.6;
   margin-bottom: 20px;
 }
+
 ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 li {
   margin-bottom: 10px;
 }
 
-/* Section spacing/structure */
 section {
   border-bottom: 1px solid #ccc;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
-/* General spacing for elements */
 h1, h2, p, li {
   margin: 20px;
 }
-/* ========== CURRENTLY LEARNING SECTION ========== */
+/******************************************
+/* CURRENTLY LEARNING TAGS
+/******************************************/
+
 .currently-learning {
   list-style: disc inside;
   padding-left: 1.5rem;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 10px 0 20px;
 }
 
 .currently-learning li {
@@ -206,12 +245,15 @@ h1, h2, p, li {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* ========== SKILLS SECTION (Badges w/ Tooltips) ========== */
+/******************************************
+/* SKILLS SECTION
+/******************************************/
+
 .skill-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  position: relative; /* for tooltips */
+  position: relative;
 }
 
 .skill-list li {
@@ -225,13 +267,13 @@ h1, h2, p, li {
   transition: transform 0.3s;
 }
 
-/* Tooltip that appears on hover */
+/* tooltips on hover */
 .skill-link .skill-tooltip {
   position: absolute;
   top: -50px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #2c3e50;
+  background-color: var(--clr-dark);
   color: #fff;
   font-size: 0.7rem;
   padding: 8px 12px;
@@ -249,12 +291,11 @@ h1, h2, p, li {
   pointer-events: auto;
 }
 
-/* Hover animation */
 .skill-link:hover {
   transform: scale(1.1);
 }
 
-/* ========== RESPONSIVE TOOLTIP ========== */
+/* Responsive adjustments for tooltips */
 @media (max-width: 768px) {
   .skill-link .skill-tooltip {
     max-width: 300px;
@@ -268,11 +309,13 @@ h1, h2, p, li {
   .skill-link .skill-tooltip {
     max-width: 150px;
     padding: 8px 10px;
-    white-space: normal;
     text-align: center;
   }
 }
-/* ========== CONTACT SECTION ========== */
+/******************************************
+/* CONTACT SECTION
+/******************************************/
+
 .contact-section {
   padding: 60px 0;
   background-color: #f5f5f5;
@@ -283,7 +326,7 @@ h1, h2, p, li {
   margin-bottom: 40px;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #333;
+  color: var(--clr-dark);
 }
 
 .contact-list {
@@ -302,14 +345,13 @@ h1, h2, p, li {
 .contact-link {
   display: block;
   text-decoration: none;
-  color: #3FA2F6;
+  color: var(--clr-accent);
   transition: color 0.3s;
 }
 
-/* Icon Styling */
 .contact-link i {
   font-size: 1.3rem;
-  border: 2px solid #3FA2F6;
+  border: 2px solid var(--clr-accent);
   border-radius: 50%;
   padding: 8px;
   width: 35px;
@@ -320,9 +362,8 @@ h1, h2, p, li {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Hover effects for icons */
 .contact-link:hover {
-  color: #2a7ebb;
+  color: var(--clr-hover);
 }
 
 .contact-link:hover i {
@@ -330,7 +371,7 @@ h1, h2, p, li {
   box-shadow: 0 0 10px rgba(63, 162, 246, 0.5);
 }
 
-/* Tooltip-style label under icons */
+/* shows small text below icons on hover */
 .contact-link[title] {
   position: relative;
 }
@@ -351,9 +392,11 @@ h1, h2, p, li {
 .contact-link[title]:hover::after {
   opacity: 1;
 }
-/* ========== CONTACT SECTION - RESPONSIVE ========== */
 
-/* Small screens (≤ 428px) */
+/******************************************
+/* RESPONSIVE STYLES - CONTACT
+/******************************************/
+
 @media (max-width: 428px) {
   .contact-section {
     padding: 40px 0;
@@ -376,7 +419,6 @@ h1, h2, p, li {
   }
 }
 
-/* Tablets (429px–1279px) */
 @media (min-width: 429px) and (max-width: 1279px) {
   .contact-section {
     padding: 50px 0;
@@ -387,10 +429,6 @@ h1, h2, p, li {
     margin-bottom: 35px;
   }
 
-  .contact-list li {
-    margin: 0 12px;
-  }
-
   .contact-link i {
     font-size: 1.4rem;
     padding: 10px;
@@ -399,19 +437,10 @@ h1, h2, p, li {
   }
 }
 
-/* Medium–large desktops (1280px–1919px) */
-@media (min-width: 1280px) and (max-width: 1919px) {
-  .contact-section {
-    padding: 60px 0;
-  }
-
+@media (min-width: 1280px) {
   .contact-section h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-  }
-
-  .contact-list li {
-    margin: 0 15px;
   }
 
   .contact-link i {
@@ -421,24 +450,38 @@ h1, h2, p, li {
     height: 45px;
   }
 }
+/******************************************
+/* FOOTER + BACK TO TOP
+/******************************************/
 
-/* ========== FOOTER ========== */
 footer {
-  background-color: #2c3e50;
+  background-color: var(--clr-header-footer); /* Using root color for consistent branding */
   color: #fff;
   padding: 20px 0;
   text-align: center;
   font-size: 14px;
 }
 
-/* ========== BACK TO TOP BUTTON ========== */
+/* GitHub link hover */
+footer a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: var(--clr-accent);
+  text-decoration: none;
+}
+
+/* back to top btn styles */
 .btt-container {
   text-align: center;
   margin: 2rem 0;
 }
 
 .btt {
-  background: #4CAF50;
+  background: #4CAF50; /* green */
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -450,91 +493,28 @@ footer {
 }
 
 .btt:hover {
-  background: #388E3C;
+  background: #388E3C; /* darker green on hover */
 }
+
 /******************************************
-/* ========== RESPONSIVE STYLES ==========
+/* MEDIA QUERY - COLOR SCHEME ADJUSTMENTS
 /******************************************/
 
-/* Base font adjustment for medium screens */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-
-  /* HEADER - Adjust for smaller screens */
-  header h1 {
-    font-size: 28px;
-  }
-
-  header p {
-    font-size: 18px;
-  }
-
-  /* NAVIGATION - Mobile-friendly */
-  .nav-menu > li {
-    margin-left: 10px;
-  }
-
-  .nav-menu > li > a {
-    font-size: 14px;
-  }
-
-  .nav-toggle {
-    display: block;
-    cursor: pointer;
-  }
-
-  .nav-toggle-icon {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin-bottom: 5px;
-  }
-
-  /* Collapse nav menu on small screens */
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #2c3e50;
-    padding: 20px 0;
-  }
-
-  .nav-menu.show {
-    display: flex;
-  }
-
-  .nav-menu > li {
-    margin: 10px 0;
-  }
-
-  /* ABOUT SECTION mobile layout */
-  .about-content {
-    flex-direction: column;
-  }
-
-  .about-image {
-    margin-bottom: 20px;
-  }
-
-  /* Optional - maintain layout spacing consistency */
-  section {
-    margin-bottom: 30px;
-  }
-}
-/******************************************
-/* ========== BACKGROUND COLOR THEMES ==========
-/* Adjust site colors based on screen width for mood + clarity
-/******************************************/
-
-@media (max-width: 768px) {
+/* Large screens - improved color */
+@media (min-width: 1280px) {
   header {
-    background-color: #2980b9; /* Calm deep blue for mid-size screens */
+    background-color: #1f2d3d; /* more contrast */
+  }
+
+  footer {
+    background-color: #1f2d3d;
+  }
+}
+
+/* Medium screens - keep same, already solid */
+@media (max-width: 1279px) and (min-width: 600px) {
+  header {
+    background-color: #2980b9; /* don't touch */
   }
 
   footer {
@@ -542,19 +522,10 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
-  /* HEADER - mobile typography tweaks */
-  header h1 {
-    font-size: 24px;
-  }
-
-  header p {
-    font-size: 16px;
-  }
-
-  /* THEME SHIFT - use vibrant tones for tiny screens */
+/* Small screens - don't change */
+@media (max-width: 599px) {
   header {
-    background-color: #e74c3c; /* Alert red = energy + urgency */
+    background-color: #e74c3c;
   }
 
   footer {
@@ -562,56 +533,6 @@ footer {
   }
 
   body {
-    background-color: #fdf6e3; /* Soft cream tone for readability */
+    background-color: #fdf6e3; /* warm neutral for contrast */
   }
-
-  /* Inherit other responsive tweaks from 768px media block */
-}
-
-/* Safety fallback: Show toggle icon on screens <768px */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-    cursor: pointer;
-  }
-
-  .nav-toggle-icon {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin-bottom: 5px;
-  }
-}
-/******************************************
-/* ========== FINAL WRAP-UP ==========
-/* Misc cleanup, responsive utility prep
-/******************************************/
-
-/* Clearfix utility class */
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive utility for stacked about content */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column; /* Stack image + text vertically */
-  }
-
-  .about-image {
-    margin-bottom: 20px; /* Add space below image */
-  }
-}
-
-/* Default fallbacks */
-h1, h2, p, li {
-  margin: 20px; /* Basic vertical rhythm */
-}
-
-/* Base reset & box model fix */
-* {
-  box-sizing: border-box;
 }
