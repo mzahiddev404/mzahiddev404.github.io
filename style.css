@@ -13,6 +13,7 @@ KEEP IT CLEAN + EASY TO READ!*/
 /******************************************/
 
 :root {
+  /* === universal colors === */
   --clr-bg-main: #f0f0f0;        /* site-wide neutral background */
   --clr-text-main: #333;         /* clean readable text color */
   --clr-accent: #00bfa6;         /* vibrant teal for links/hover/buttons */
