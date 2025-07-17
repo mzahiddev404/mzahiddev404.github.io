@@ -1,144 +1,123 @@
-/* Box Model Hack */
+/* ========== GLOBAL RESET & BOX MODEL ========== */
 * {
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  box-sizing: border-box; /* Makes width/height include padding + border */
 }
 
-/* Clear fix hack */
-.clearfix:after {
+/* Float clearing utilities */
+.clearfix::after {
   content: ".";
   display: block;
   clear: both;
   visibility: hidden;
-  line-height: 0;
   height: 0;
+  line-height: 0;
 }
-
 .clear {
-  clear: both; /* Clear floats */
+  clear: both;
 }
 
-/******************************************
-/* BASE STYLES
-/*******************************************/
-
-/* Body styles */
+/* ========== BASE STYLES ========== */
 body {
   font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
   margin: 0;
   padding: 0;
   background-color: #f0f0f0;
-  font-size: 16px;
-  color: #333;
 }
 
-/* Consistent width container */
+/* General page wrapper */
 .container {
   width: 90%;
   max-width: 1000px;
-  margin: 0 auto; /* Center the container */
+  margin: 0 auto;
 }
 
-/******************************************
-/* NAVIGATION
-/*******************************************/
-
-/* Navigation bar */
+/* ========== NAVIGATION STYLES ========== */
 .navbar {
   background-color: #2c3e50;
   color: #fff;
   padding: 10px 0;
 }
 
-/* Container within the navigation bar */
+/* Navbar flex layout */
 .navbar .container {
   display: flex;
-  align-items: center; /* Vertically center items */
+  align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 100; /* Ensure the navigation bar stays on top */
+  z-index: 100;
 }
 
-/* Logo within the navigation bar */
+/* Branding/logo */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
 .navbar .logo a {
-  text-decoration: none;
   color: #fff;
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
 }
-
-.navbar .logo {
-  display: flex;
-  align-items: center; /* Vertically center logo and text */
-}
-
 .navbar .logo img {
-  height: 50px; /* Set logo height */
-  margin-right: 10px; /* Space between logo and text */
+  height: 50px;
+  margin-right: 10px;
 }
 
-/* Navigation menu */
+/* Nav links */
 .nav-menu {
-  list-style: none;
   display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
-  position: relative; /* For dropdown menu positioning */
 }
-
 .nav-menu > li {
   margin-left: 20px;
-  position: relative; /* For dropdown menu positioning */
+  position: relative;
 }
-
 .nav-menu > li > a {
   color: #fff;
-  text-decoration: none;
   font-size: 16px;
+  text-decoration: none;
+  padding: 10px;
   transition: color 0.3s ease;
-  padding: 10px; /* Add padding to nav links */
 }
-
 .nav-menu > li > a:hover {
-  color: #3498db; /* Change link color on hover */
+  color: #3498db;
 }
-
-/* Dropdown menu */
+/* ========== DROPDOWN NAVIGATION (desktop) ========== */
 .nav-menu li ul {
-  display: none; /* Hide dropdown by default */
-  position: absolute; /* Position dropdown absolutely */
-  top: 100%; /* Position below nav link */
+  display: none;
+  position: absolute;
+  top: 100%;
   left: 0;
   background-color: #2c3e50;
   padding: 10px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle box shadow */
-  z-index: 1; /* Ensure dropdown is on top */
-  min-width: 200px; /* Set minimum width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 200px;
 }
 
 .nav-menu li:hover > ul {
-  display: block; /* Show dropdown on hover */
+  display: block;
 }
 
 .nav-menu li ul li {
-  margin: 0;
-  padding: 5px 20px; /* Add padding to dropdown items */
+  padding: 5px 20px;
 }
-
 .nav-menu li ul li a {
   color: #fff;
-  font-size: 14px; /* Slightly smaller font for dropdown links */
+  font-size: 14px;
+  display: block;
   transition: color 0.3s ease;
-  display: block; /* Ensure entire item is clickable */
 }
-
 .nav-menu li ul li a:hover {
-  color: #3498db; /* Change dropdown link color on hover */
+  color: #3498db;
 }
 
-/******************************************
-/* HEADER
-/*******************************************/
+/* ========== HEADER SECTION ========== */
 header {
   background-color: #34495e;
   color: #fff;
@@ -150,17 +129,13 @@ header {
   margin: 0;
   font-size: 36px;
 }
-
 header p {
   margin: 10px 0 0;
   font-size: 20px;
 }
 
-/******************************************
-/* ANIMATION
-/*******************************************/
+/* ========== HEADER FADE-IN ANIMATION ========== */
 .header-content {
-  /* Fade-in animation for the header content */
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
 }
@@ -176,14 +151,12 @@ header p {
   }
 }
 
-/******************************************
-/* MAIN CONTENT
-/*******************************************/
+/* ========== MAIN CONTENT BASE ========== */
 main {
   padding: 40px 0;
 }
 
-/* Section Titles */
+/* Section titles */
 section h2 {
   color: #2c3e50;
   font-size: 28px;
@@ -191,34 +164,31 @@ section h2 {
   text-align: center;
 }
 
-/* Section Paragraphs */
+/* Body text + spacing */
 section p {
   line-height: 1.6;
   margin-bottom: 20px;
 }
-
-/* Lists */
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 li {
   margin-bottom: 10px;
 }
 
-/* Add spacing and border between sections */
+/* Section spacing/structure */
 section {
-  border-bottom: 1px solid #ccc; /* Light gray line */
-  padding-bottom: 20px; /* Space below the section */
-  margin-bottom: 20px; /* Space above the next section */
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
-h1, h2, p, li {
-  margin: 20px; /* Adjust text spacing (debugging...) */
-}
-/******************************************
-/* CURRENTLY LEARNING SECTION
-/*******************************************/
 
+/* General spacing for elements */
+h1, h2, p, li {
+  margin: 20px;
+}
+/* ========== CURRENTLY LEARNING SECTION ========== */
 .currently-learning {
   list-style: disc inside;
   padding-left: 1.5rem;
@@ -236,84 +206,73 @@ h1, h2, p, li {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-
-/******************************************
-/* SKILLS SECTION
-/*******************************************/
-
-/* Container for skill icons */
+/* ========== SKILLS SECTION (Badges w/ Tooltips) ========== */
 .skill-list {
-  display: flex; /* Row layout */
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Horizontally centered */
-  position: relative; /* For tooltip positioning */
+  justify-content: center;
+  position: relative; /* for tooltips */
 }
 
-/* Individual skill icon */
 .skill-list li {
-  margin: 10px; /* Spacing between icons */
-  position: relative; /* For tooltip positioning */
+  margin: 10px;
+  position: relative;
 }
 
-/* Skill icon link */
 .skill-link {
   display: block;
   text-decoration: none;
-  transition: transform 0.3s; /* Smooth scale animation */
+  transition: transform 0.3s;
 }
 
-/* Tooltip on hover */
+/* Tooltip that appears on hover */
 .skill-link .skill-tooltip {
-  position: absolute; /* Positioned within skill icon */
-  top: -50px; /* Above the icon */
-  left: 50%; /* Horizontally centered */
-  transform: translateX(-50%); /* Shift to center */
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #2c3e50;
   color: #fff;
   font-size: 0.7rem;
   padding: 8px 12px;
   border-radius: 4px;
-  white-space: nowrap; /* No text wrap */
-  opacity: 0; /* Hidden by default */
-  pointer-events: none; /* Prevent interference */
-  transition: opacity 0.3s; /* Smooth fade */
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
   z-index: 1;
-  width: max-content; /* Fit content width */
+  width: max-content;
 }
 
-/* Show tooltip on hover */
 .skill-link.active .skill-tooltip {
-  opacity: 1; /* Show tooltip */
-  pointer-events: auto; /* Enable interaction */
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Scale icon on hover */
+/* Hover animation */
 .skill-link:hover {
   transform: scale(1.1);
 }
 
-/* Responsive tooltip styles */
+/* ========== RESPONSIVE TOOLTIP ========== */
 @media (max-width: 768px) {
   .skill-link .skill-tooltip {
-    max-width: 300px; /* Increase width */
-    padding: 10px 12px; /* Increase padding */
-    white-space: normal; /* Allow text wrap */
-    text-align: center; /* Center text */
-  }
-}
-
-@media (max-width: 480px) {
-  .skill-link .skill-tooltip {
-    max-width: 150px; /* Decrease width */
-    padding: 8px 10px; /* Decrease padding */
+    max-width: 300px;
+    padding: 10px 12px;
     white-space: normal;
     text-align: center;
   }
 }
 
-/******************************************
-/* CONTACT SECTION
-/*******************************************/
+@media (max-width: 480px) {
+  .skill-link .skill-tooltip {
+    max-width: 150px;
+    padding: 8px 10px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+/* ========== CONTACT SECTION ========== */
 .contact-section {
   padding: 60px 0;
   background-color: #f5f5f5;
@@ -347,6 +306,7 @@ h1, h2, p, li {
   transition: color 0.3s;
 }
 
+/* Icon Styling */
 .contact-link i {
   font-size: 1.3rem;
   border: 2px solid #3FA2F6;
@@ -360,6 +320,7 @@ h1, h2, p, li {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Hover effects for icons */
 .contact-link:hover {
   color: #2a7ebb;
 }
@@ -369,7 +330,7 @@ h1, h2, p, li {
   box-shadow: 0 0 10px rgba(63, 162, 246, 0.5);
 }
 
-/* added on Hover show text*/
+/* Tooltip-style label under icons */
 .contact-link[title] {
   position: relative;
 }
@@ -390,13 +351,9 @@ h1, h2, p, li {
 .contact-link[title]:hover::after {
   opacity: 1;
 }
+/* ========== CONTACT SECTION - RESPONSIVE ========== */
 
-
-/******************************************
-/* RESPONSIVE STYLES: CONTACT SECTION
-/*******************************************/
-
-/* Mobile Styles (max-width: 428px) */
+/* Small screens (≤ 428px) */
 @media (max-width: 428px) {
   .contact-section {
     padding: 40px 0;
@@ -419,7 +376,7 @@ h1, h2, p, li {
   }
 }
 
-/* Tablet Styles (min-width: 429px and max-width: 1279px) */
+/* Tablets (429px–1279px) */
 @media (min-width: 429px) and (max-width: 1279px) {
   .contact-section {
     padding: 50px 0;
@@ -442,7 +399,7 @@ h1, h2, p, li {
   }
 }
 
-/* Desktop Styles (min-width: 1280px and max-width: 1919px) */
+/* Medium–large desktops (1280px–1919px) */
 @media (min-width: 1280px) and (max-width: 1919px) {
   .contact-section {
     padding: 60px 0;
@@ -465,11 +422,7 @@ h1, h2, p, li {
   }
 }
 
-
-
-/******************************************
-/* FOOTER
-/*******************************************/
+/* ========== FOOTER ========== */
 footer {
   background-color: #2c3e50;
   color: #fff;
@@ -477,14 +430,15 @@ footer {
   text-align: center;
   font-size: 14px;
 }
-/* Back to Top Button */
+
+/* ========== BACK TO TOP BUTTON ========== */
 .btt-container {
   text-align: center;
   margin: 2rem 0;
 }
 
 .btt {
-  background: #4CAF50;      /* fresh green */
+  background: #4CAF50;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -492,45 +446,45 @@ footer {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btt:hover {
-  background: #388E3C;      /* darker green on hover */
+  background: #388E3C;
 }
-
-
 /******************************************
-/* RESPONSIVE STYLES
-/*******************************************/
+/* ========== RESPONSIVE STYLES ==========
+/******************************************/
 
-/* Styles for screens up to 768px wide */
+/* Base font adjustment for medium screens */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
   }
-  /******************************************
-  /* RESPONSIVE STYLES: HEADER
-  /*******************************************/
+
+  /* HEADER - Adjust for smaller screens */
   header h1 {
     font-size: 28px;
   }
+
   header p {
     font-size: 18px;
   }
-  /******************************************
-  /* RESPONSIVE STYLES: NAVIGATION
-  /*******************************************/
+
+  /* NAVIGATION - Mobile-friendly */
   .nav-menu > li {
     margin-left: 10px;
   }
+
   .nav-menu > li > a {
     font-size: 14px;
   }
+
   .nav-toggle {
     display: block;
     cursor: pointer;
   }
+
   .nav-toggle-icon {
     display: block;
     width: 30px;
@@ -538,6 +492,8 @@ footer {
     background-color: #fff;
     margin-bottom: 5px;
   }
+
+  /* Collapse nav menu on small screens */
   .nav-menu {
     display: none;
     flex-direction: column;
@@ -548,65 +504,74 @@ footer {
     background-color: #2c3e50;
     padding: 20px 0;
   }
+
   .nav-menu.show {
     display: flex;
   }
+
   .nav-menu > li {
     margin: 10px 0;
   }
-  /* Navigation Dropdown remains unchanged */
-  .nav-menu li ul {
-    position: static;
-  }
-  /******************************************
-  /* RESPONSIVE STYLES: ABOUT SECTION
-  /*******************************************/
+
+  /* ABOUT SECTION mobile layout */
   .about-content {
-    flex-direction: column; /* Stack the image and text vertically */
+    flex-direction: column;
   }
+
   .about-image {
-    margin-bottom: 20px; /* Spacing between image and text */
+    margin-bottom: 20px;
   }
-  /******************************************
-  /* RESPONSIVE STYLES: BACKGROUND COLORS
-  /*******************************************/
+
+  /* Optional - maintain layout spacing consistency */
+  section {
+    margin-bottom: 30px;
+  }
+}
+/******************************************
+/* ========== BACKGROUND COLOR THEMES ==========
+/* Adjust site colors based on screen width for mood + clarity
+/******************************************/
+
+@media (max-width: 768px) {
   header {
-    background-color: #2980b9; /* Calm blue for trust and reliability */
+    background-color: #2980b9; /* Calm deep blue for mid-size screens */
   }
+
   footer {
     background-color: #2980b9;
   }
 }
 
-/* Styles for screens up to 480px wide */
 @media (max-width: 480px) {
-  /******************************************
-  /* RESPONSIVE STYLES: HEADER
-  /*******************************************/
+  /* HEADER - mobile typography tweaks */
   header h1 {
     font-size: 24px;
   }
+
   header p {
     font-size: 16px;
   }
-  /******************************************
-  /* RESPONSIVE STYLES: BACKGROUND COLORS
-  /*******************************************/
+
+  /* THEME SHIFT - use vibrant tones for tiny screens */
   header {
-    background-color: #e74c3c; /* Vibrant red for energy and urgency */
+    background-color: #e74c3c; /* Alert red = energy + urgency */
   }
+
   footer {
     background-color: #e74c3c;
   }
+
   body {
-    background-color: #fdf6e3; /* Warm, light background for contrast */
+    background-color: #fdf6e3; /* Soft cream tone for readability */
   }
-  /* Note: Navigation and About Section styles are inherited from the 768px query *
+
+  /* Inherit other responsive tweaks from 768px media block */
 }
 
+/* Safety fallback: Show toggle icon on screens <768px */
 @media (max-width: 768px) {
   .nav-toggle {
-    display: block; /* Show toggle on mobile */
+    display: block;
     cursor: pointer;
   }
 
@@ -615,4 +580,38 @@ footer {
     width: 30px;
     height: 3px;
     background-color: #fff;
-    margin-bottom
+    margin-bottom: 5px;
+  }
+}
+/******************************************
+/* ========== FINAL WRAP-UP ==========
+/* Misc cleanup, responsive utility prep
+/******************************************/
+
+/* Clearfix utility class */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive utility for stacked about content */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack image + text vertically */
+  }
+
+  .about-image {
+    margin-bottom: 20px; /* Add space below image */
+  }
+}
+
+/* Default fallbacks */
+h1, h2, p, li {
+  margin: 20px; /* Basic vertical rhythm */
+}
+
+/* Base reset & box model fix */
+* {
+  box-sizing: border-box;
+}
