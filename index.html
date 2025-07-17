@@ -1,186 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Profile</title>
-  <link rel="stylesheet" href="style.css">
-<!-- fontawesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My GitHub Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
 
-</head>
   <body>
-<!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
           <a href="#home">
-              <img src="logo.png" alt="Profile image/logo" style="height: 50px; vertical-align: middle;"> <!--  logo image here -->
+            <img
+              src="logo.png"
+              alt="Profile image/logo"
+              style="height: 50px; vertical-align: middle"
+            />
+            <!-- logo image here -->
             Muhammad.
           </a>
+        </div>
+        <div class="nav-toggle">
+          <span class="nav-toggle-icon"></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#about" aria-label="About">About</a></li>
+          <li><a href="#certifications" aria-label="Certifications">Certifications</a></li>
+          <li><a href="#projects" aria-label="Projects">Projects</a></li>
+          <li><a href="#skills" aria-label="Skills">Skills</a></li>
+          <li><a href="#contact" aria-label="Contact">Contact</a></li>
+        </ul>
       </div>
-      <div class="nav-toggle">
-        <span class="nav-toggle-icon"></span>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home">
+      <div class="header-content">
+        <h1>Hi, I'm Muhammad Zahid</h1>
+        <p>Learning full-stack dev. I write, break things, fix them, and repeat!</p>
       </div>
-      <ul class="nav-menu">
-        <li><a href="#about" aria-label="About">About</a></li>
-        <li><a href="#certifications" aria-label="Certifications">Certifications</a></li>
-        <li><a href="#projects" aria-label="Projects">Projects</a></li>
-        <li><a href="#skills" aria-label="Skills">Skills</a></li>
-        <li><a href="#contact" aria-label="Contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+    </header>
 
-<!-- Header Section -->
-  <header id="home">
-    <div class="header-content">
-      <h1>Hi, I'm Muhammad Zahid</h1>
-      <p>Learning full-stack dev. I write, break things, fix them, and repeat!</p>
-    </div>
-  </header>
+    <main>
+      <!-- About Section -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Certified Salesforce Administrator and full-stack developer in progress, building
+          user-centered, scalable tools that automate and solve real-world problems. I specialize in
+          clean UI, functional logic, and scalable architecture, and bring a systems-first mindset
+          from my clinical and data-heavy background.
+        </p>
+        <p>
+          Currently developing in HTML, CSS, and JavaScript, and expanding into Node.js, React, and
+          MongoDB through structured bootcamps like AZNext Web Developer (July 2025) and 100Devs.
+          I'm committed to continuous learning, hands-on development, and delivering practical
+          software that works.
+        </p>
+      </section>
 
-  <main>
-<!-- About Section -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Certified Salesforce Administrator and full-stack developer in progress, building user-centered, scalable tools that automate and solve real-world problems.
-    I specialize in clean UI, functional logic, and scalable architecture, and bring a systems-first mindset from my clinical and data-heavy background.
-  </p>
-  <p>
-    Currently developing in HTML, CSS, and JavaScript, and expanding into Node.js, React, and MongoDB through structured bootcamps like AZNext Web Developer (July 2025) and 100Devs.
-    I'm committed to continuous learning, hands-on development, and delivering practical software that works.
-  </p>
-</section>
+      <!-- Certifications Section -->
+      <section id="certifications">
+        <h2>Certifications & Training</h2>
+        <ul>
+          <li>
+            <strong>Salesforce Certified Administrator</strong>
+            <ul>
+              <li>Platform configuration</li>
+              <li>User management</li>
+              <li>Process automation (Flows, Validation Rules, Page Layouts)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>AZNext Web Developer (ASU)</strong> – Enrolled, Cohort July 2025
+            <ul>
+              <li>Focused on full-stack JavaScript development</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Currently Learning</strong>
+            <ul class="currently-learning">
+              <li title="React">React ⚛️</li>
+              <li title="Node.js">Node.js 🌐</li>
+              <li title="MongoDB">MongoDB 🍃</li>
+              <li title="Git">Git ✅</li>
+              <li title="Agile">Agile 🌀</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
 
-<!-- Certifications Section -->
-<section id="certifications">
-  <h2>Certifications & training</h2>
-  <ul>
-    <li>
-      <strong>Salesforce Certified Administrator</strong>
-      <ul>
-        <li>Platform configuration</li>
-        <li>User management</li>
-        <li>Process automation (Flows, Validation Rules, Page Layouts)</li>
-      </ul>
-    </li>
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <strong>Portfolio Website</strong> (in progress): A personal project to showcase my
+            learning journey and future work.<br />
+            Built using HTML, CSS, and JavaScript. The site is fully responsive with some
+            interactive touches.<br />
+            <a href="https://github.com/mzahiddev404/mzahiddev404.github.io" target="_blank" title="View Portfolio Code">📂 View Code</a>
+          </li>
+          <li>
+            <strong>Background Color Picker (AZNext Prework)</strong>: A simple app that changes the background color using clickable buttons.<br>
+            Used DOM methods like <code>querySelector</code> + event listeners. Simple UI with hover effects.<br>
+            <a href="https://mzahiddev404.github.io/background-color-picker-prework/" target="_blank" title="Live Color Picker Demo">💻 View Live</a>
+            |
+            <a href="https://github.com/mzahiddev404/background-color-picker-prework" target="_blank" title="View Code on GitHub">📂 View Code</a>
+          </li>
+        </ul>
+      </section>
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li>
+            <a href="#" class="skill-link">
+              <img
+                src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                alt="HTML5 Badge"
+              />
+              <span class="skill-tooltip">Markup language for creating web pages</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="skill-link">
+              <img
+                src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                alt="CSS3 Badge"
+              />
+              <span class="skill-tooltip"
+                >Style sheet language for describing the presentation of a document</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#" class="skill-link">
+              <img
+                src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+                alt="JavaScript Badge"
+              />
+              <span class="skill-tooltip">Programming language for web development</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="skill-link">
+              <img
+                src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+                alt="Python Badge"
+              />
+              <span class="skill-tooltip">General-purpose programming language</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="skill-link">
+              <img
+                src="https://img.shields.io/badge/Salesforce-00A1E0?style=for-the-badge&logo=Salesforce&logoColor=white"
+                alt="Salesforce Badge"
+              />
+              <span class="skill-tooltip"
+                >Cloud-based customer relationship management (CRM) platform</span
+              >
+            </a>
+          </li>
+        </ul>
+      </section>
 
-    <li>
-      <strong>AZNext Web Developer (ASU)</strong> – Enrolled, Cohort July 2025
-      <ul>
-        <li>Focused on full-stack JavaScript development</li>
-      </ul>
-    </li>
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/zahidm"
+              class="contact-link"
+              title="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/mzahiddev404"
+              class="contact-link"
+              title="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:mzahiddev404@gmail.com"
+              class="contact-link"
+              title="Email"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://x.com/logmzahid"
+              class="contact-link"
+              title="X(Twitter)"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
 
-    <li>
-      <strong>Currently Learning</strong>
-      <ul class="currently-learning">
-        <li title="React">React ⚛️</li>
-        <li title="Node.js">Node.js 🌐</li>
-        <li title="MongoDB">MongoDB 🍃</li>
-        <li title="Git">Git ✅</li>
-        <li title="Agile">Agile 🌀</li>
-      </ul>
-    </li>
-  </ul>
-</section>
+    <footer>
+      <p>&copy; 2025 Muhammad Zahid</p>
+    </footer>
 
-<!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>Portfolio Website</strong> (in progress): A personal project to showcase my learning journey and future work.<br>
-          Built using HTML, CSS, and JavaScript. The site is fully responsive with some interactive touches.<br>
-          <a href="https://mzahiddev404.github.io/" target="_blank">💻 View Code</a>
-        </li>
-        <li>
-          <strong>Background Color Picker (AZNext Prework)</strong>: A simple app that changes the background color using clickable buttons.<br>
-          Practiced DOM methods like <code>querySelector</code>, event listeners, and clean CSS UI.<br>
-          <a href="https://mzahiddev404.github.io/background-color-picker-prework/" target="_blank">🎨 View Live</a>
-          |
-          <a href="https://github.com/mzahiddev404/background-color-picker-prework" target="_blank">🔗 View Code</a>
-        </li>
+    <script src="script.js"></script>
 
-      </ul>
-    </section>
-    
-<!-- Skills Section -->
-<section id="skills">
-  <h2>Skills</h2>
-  <ul class="skill-list">
-    <li>
-      <a href="#" class="skill-link">
-        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Badge">
-        <span class="skill-tooltip">Markup language for creating web pages</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="skill-link">
-        <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 Badge">
-        <span class="skill-tooltip">Style sheet language for describing the presentation of a document</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="skill-link">
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge">
-        <span class="skill-tooltip">Programming language for web development</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="skill-link">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge">
-        <span class="skill-tooltip">General-purpose programming language</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="skill-link">
-        <img src="https://img.shields.io/badge/Salesforce-00A1E0?style=for-the-badge&logo=Salesforce&logoColor=white" alt="Salesforce Badge">
-        <span class="skill-tooltip">Cloud-based customer relationship management (CRM) platform</span>
-      </a>
-    </li>
-  </ul>
-</section>
-    
-    <!-- Contact Section -->
-            <section id="contact">
-              <h2>Contact</h2>
-                  <ul class="contact-list">
-                    <li>
-                      <a href="https://www.linkedin.com/in/zahidm" class="contact-link" title="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/mzahiddev404" class="contact-link" title="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="mailto:mzahiddev404@gmail.com" class="contact-link" title="Email">
-                        <i class="fa-solid fa-envelope"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://x.com/logmzahid" class="contact-link" title="X(Twitter)">
-                        <i class="fa-brands fa-twitter"></i>
-                      </a>
-                    </li>
-                  </ul>
-            </section>
-        </main>
-      <footer>
-        <p>&copy; 2025 Muhammad Zahid</p>
-      </footer>
-      <script src="script.js"></script>
     <!-- BACK TO TOP BUTTON HERE -->
-      <div class="btt-container">
-        <a href="#home" class="btt">Back to Top</a>
-      </div>
-    </body>
+    <div class="btt-container">
+      <a href="#home" class="btt">Back to Top</a>
+    </div>
+  </body>
 </html>
+
 
 <!--   
 <section id="contact">
