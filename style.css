@@ -63,7 +63,7 @@ body {
 /******************************************/
 
 .navbar {
-  background-color: var(--clr-header-lg); /* pulls from :root */
+  background-color: var(--clr-header-lg);
   color: #fff;
   padding: 10px 0;
 }
@@ -94,17 +94,35 @@ body {
   font-weight: bold;
 }
 
+/* 👇 Hamburger icon container */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* 👇 Hamburger bars */
+.nav-toggle-icon {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* 🖥️ Default nav menu (desktop) */
 .nav-menu {
-  list-style: none;
   display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .nav-menu > li {
   margin-left: 20px;
-  position: relative;
 }
 
 .nav-menu > li > a {
@@ -119,37 +137,34 @@ body {
   color: var(--clr-accent);
 }
 
-/* DROPDOWN (for future scalability) */
-.nav-menu li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--clr-header-lg);
-  padding: 10px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1;
-  min-width: 200px;
+/******************************************
+/* MOBILE NAVIGATION (<=768px)
+/******************************************/
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-header-lg);
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu > li {
+    margin: 10px 0;
+    text-align: center;
+  }
 }
 
-.nav-menu li:hover > ul {
-  display: block;
-}
-
-.nav-menu li ul li {
-  padding: 5px 20px;
-}
-
-.nav-menu li ul li a {
-  color: #fff;
-  font-size: 14px;
-  display: block;
-  transition: color 0.3s ease;
-}
-
-.nav-menu li ul li a:hover {
-  color: var(--clr-accent);
-}
 /******************************************
 /* HEADER + INTRO SECTION
 /******************************************/
