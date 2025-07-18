@@ -1,9 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
+/******************************************
+ * 🧠 INIT WHEN DOM IS READY
+ ******************************************/
+document.addEventListener('DOMContentLoaded', () => {
+  setupOverlay();           // add dim background
+  setupMobileNav();         // toggle nav menu
+  setupSmoothScroll();      // scroll to section
+  setupSectionHighlight();  // highlight active nav link
+  setupNavHover();          // nav hover feedback
+  setupNavClose();          // auto close nav on click
+  setupSkillTooltips();     // skill tooltip clicks
 
-  /******************************************
-  /* OVERLAY SETUP
-  /* Creates an overlay to dim background when nav menu is active.
-  /*******************************************/
+  window.addEventListener('scroll', highlightNavOnScroll);
+});
+
+/******************************************
+ * ☁️ OVERLAY UTILITY — adds dark backdrop
+ ******************************************/
+function setupOverlay() {
   const overlay = document.createElement('div');
   overlay.id = 'overlay';
   Object.assign(overlay.style, {
@@ -14,163 +27,156 @@ document.addEventListener('DOMContentLoaded', function() {
     height: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     opacity: '0',
+    pointerEvents: 'none',
     transition: 'opacity 0.3s ease',
-    zIndex: '90', // behind the nav menu (nav menu z-index: 100)
-    pointerEvents: 'none'
+    zIndex: '90' // behind nav menu
   });
   document.body.appendChild(overlay);
+}
 
-  /******************************************
-  /* MOBILE NAVIGATION
-  /* Toggles the nav menu and overlay when the nav toggle is clicked.
-  /*******************************************/
-  function toggleMobileNavigation() {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+/******************************************
+ * 📱 MOBILE NAV — hamburger toggle logic
+ ******************************************/
+function setupMobileNav() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const overlay = document.getElementById('overlay');
 
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-      if (navMenu.classList.contains('show')) {
-        overlay.style.opacity = '1';
-        overlay.style.pointerEvents = 'auto';
-      } else {
-        overlay.style.opacity = '0';
-        overlay.style.pointerEvents = 'none';
-      }
-    });
-
-    // Clicking on overlay closes the nav menu and resets the overlay.
-    overlay.addEventListener('click', () => {
-      navMenu.classList.remove('show');
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    if (navMenu.classList.contains('show')) {
+      overlay.style.opacity = '1';
+      overlay.style.pointerEvents = 'auto';
+    } else {
       overlay.style.opacity = '0';
       overlay.style.pointerEvents = 'none';
-    });
-  }
+    }
+  });
 
-  /******************************************
-  /* SMOOTH SCROLLING
-  /* SMOOTH SCROLLING to the targeted section when the nav link is clicked.
-  /*******************************************/
-  function addSmoothScrolling() {
-    const sectionLinks = document.querySelectorAll('a[href^="#"]');
-    sectionLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetElement = document.querySelector(this.getAttribute('href'));
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      });
+  // click outside to close menu
+  overlay.addEventListener('click', () => {
+    navMenu.classList.remove('show');
+    overlay.style.opacity = '0';
+    overlay.style.pointerEvents = 'none';
+  });
+}
+/******************************************
+ * 🧭 SMOOTH SCROLLING — nav clicks scroll to section
+ ******************************************/
+function setupSmoothScroll() {
+  const sectionLinks = document.querySelectorAll('a[href^="#"]');
+  sectionLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target?.scrollIntoView({ behavior: 'smooth' });
     });
-  }
+  });
+}
 
-  /******************************************
-  /* HIGHLIGHT CURRENT SECTION
-  /* Highlights the current active nav link based on scroll position.
-  /*******************************************/
-  function highlightCurrentSection() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    let currentSection = null;
-    sections.forEach(section => {
-      if (window.pageYOffset >= section.offsetTop - 100) {
-        currentSection = section;
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (currentSection && link.getAttribute('href') === `#${currentSection.id}`) {
-        link.classList.add('active');
-      }
-    });
-  }
+/******************************************
+ * 🧠 HIGHLIGHT SECTION — tracks scroll position
+ ******************************************/
+function setupSectionHighlight() {
+  window.addEventListener('scroll', highlightNavOnScroll);
+}
 
-  /******************************************
-  /* NAV LINK HOVER EFFECT
-  /* Changes the nav link color on hover for visual feedback.
-  /*******************************************/
-  function addNavLinkHoverEffect() {
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-      link.addEventListener('mouseover', () => link.style.color = '#3498db');
-      link.addEventListener('mouseout', () => link.style.color = '#fff');
-    });
-  }
+/******************************************
+ * 🎯 highlightNavOnScroll — makes nav link active based on scroll
+ ******************************************/
+function highlightNavOnScroll() {
+  const sections = document.querySelectorAll('main section');
+  const navLinks = document.querySelectorAll('.nav-menu a');
 
-  /******************************************
-  /* CLOSE MENU ON LINK CLICK
-  /* Closes the nav menu and resets the overlay when any nav link is clicked.
-  /*******************************************/
-  function addNavMenuCloseOnLinkClick() {
-    const navMenuLinks = document.querySelectorAll('.nav-menu a');
-    navMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        const navMenu = document.querySelector('.nav-menu');
-        navMenu.classList.remove('show');
+  let current = null;
+
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 100) {
+      current = section;
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (current && link.getAttribute('href') === `#${current.id}`) {
+      link.classList.add('active');
+    }
+  });
+}
+/******************************************
+ * 🎨 HOVER EFFECTS — highlight nav links on hover
+ ******************************************/
+function setupNavHoverEffects() {
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+      link.style.color = '#3498db'; // matches root accent
+    });
+    link.addEventListener('mouseout', () => {
+      link.style.color = '#fff'; // resets to original
+    });
+  });
+}
+
+/******************************************
+ * 🛑 CLOSE NAV ON LINK CLICK — for mobile UX
+ ******************************************/
+function setupNavLinkClose() {
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  const navMenu = document.querySelector('.nav-menu');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      const overlay = document.getElementById('overlay');
+      if (overlay) {
         overlay.style.opacity = '0';
         overlay.style.pointerEvents = 'none';
-      });
+      }
     });
-  }
+  });
+}
+/******************************************
+ * 🧠 SKILLS TOOLTIP LOGIC
+ * click to reveal tooltips, hide after 3s or blur
+ ******************************************/
 
-  /******************************************
-  /* INITIALIZATION
-  /* Runs all functions to set up the page behavior.
-  /*******************************************/
-  toggleMobileNavigation();
-  addSmoothScrolling();
-  highlightCurrentSection();
-  addNavLinkHoverEffect();
-  addNavMenuCloseOnLinkClick();
-  window.addEventListener('scroll', highlightCurrentSection);
-
-});
-
-  /******************************************
-  /* Skills Logo click detail.
-  /*******************************************/
-
-// Set up click event handler for skill links
+// Run once DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   const skillLinks = document.querySelectorAll('.skill-link');
+
+  // click → show tooltip
   skillLinks.forEach(link => {
-    link.addEventListener('click', toggleActiveLink);
-  });
-});
+    link.addEventListener('click', function () {
+      // Remove 'active' from all tooltips
+      skillLinks.forEach(other => {
+        other.classList.remove('active');
+        other.querySelector('.skill-tooltip').style.display = 'none';
+      });
 
-// Toggle active link and show/hide tooltip
-function toggleActiveLink() {
-  const skillLinks = document.querySelectorAll('.skill-link');
-  skillLinks.forEach(l => {
-    l.classList.remove('active');
-    l.querySelector('.skill-tooltip').style.display = 'none';
-  });
-  this.classList.add('active');
-  this.querySelector('.skill-tooltip').style.display = 'block';
-  hideTooltipAfterDelay(this);
-  hideTooltipOnBlur(this);
-}
+      // Show the clicked tooltip
+      this.classList.add('active');
+      const tooltip = this.querySelector('.skill-tooltip');
+      tooltip.style.display = 'block';
 
-// Hide tooltip after 3 seconds
-function hideTooltipAfterDelay(link) {
-  let tooltipTimeout;
-  clearTimeout(tooltipTimeout);
-  tooltipTimeout = setTimeout(() => {
-    link.querySelector('.skill-tooltip').style.display = 'none';
-  }, 3000);
-}
+      // Hide after 3 seconds
+      clearTimeout(this.tooltipTimeout);
+      this.tooltipTimeout = setTimeout(() => {
+        tooltip.style.display = 'none';
+        this.classList.remove('active');
+      }, 3000);
 
-// Hide tooltip when clicking outside the link
-function hideTooltipOnBlur(link) {
-  link.addEventListener('blur', () => {
-    link.querySelector('.skill-tooltip').style.display = 'none';
-  });
-}
-
-// Hide all tooltips when clicking outside the skills section
-document.addEventListener('click', (event) => {
-  if (!event.target.closest('#skills')) {
-    const skillLinks = document.querySelectorAll('.skill-link');
-    skillLinks.forEach(link => {
-      link.querySelector('.skill-tooltip').style.display = 'none';
+      // Also hide if user clicks elsewhere (below)
     });
-  }
+  });
+
+  // If user clicks outside of skills, hide everything
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#skills')) {
+      skillLinks.forEach(link => {
+        link.classList.remove('active');
+        link.querySelector('.skill-tooltip').style.display = 'none';
+      });
+    }
+  });
 });
