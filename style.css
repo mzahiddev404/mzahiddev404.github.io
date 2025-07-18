@@ -576,3 +576,59 @@ footer a:hover {
     background-color: #fdf6e3; /* warm neutral for contrast */
   }
 }
+
+/* ======================================
+   HAMBURGER MENU GLOW EFFECT
+   Animated pulse glow (teal/blue hue)
+   scoped to nav-toggle-icon only
+   ====================================== */
+
+.nav-toggle-icon {
+  display: inline-block;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  position: relative;
+  border-radius: 2px;
+
+  /* Glowing pulse animation */
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* Top and bottom lines of hamburger */
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  left: 0;
+}
+
+/* Top bar */
+.nav-toggle-icon::before {
+  top: -8px;
+}
+
+/* Bottom bar */
+.nav-toggle-icon::after {
+  top: 8px;
+}
+
+/* Pulse animation - subtle glow */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  }
+}
+
+/* enhancement: glow intensifies on hover */
+.nav-toggle-icon:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+  transition: box-shadow 0.2s ease-in-out;
+}
