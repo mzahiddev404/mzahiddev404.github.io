@@ -1,6 +1,6 @@
 # 🌐 Muhammad Zahid | Developer Portfolio
 
-This is my personal portfolio site, built using **HTML**, **CSS**, and **JavaScript**, as part of my ongoing full-stack development journey. I’ve started learning through online resources such as youtube, 100Devs, and I’m preparing for **AZNext Web Developer Program** ASU (July 2025 cohort) and will update site as I further progress.
+This is my personal portfolio site, built using **HTML**, **CSS**, and **JavaScript**, as part of my ongoing full-stack development journey. I’ve started learning through online resources such as youtube, Udemy, and I further advance with ASU's **AZNext Web Developer Program** in partnership with Cognizant (July 2025 cohort) and will update site as I further progress.
 
 Live site: [mzahiddev404.github.io](https://mzahiddev404.github.io)
 
@@ -63,8 +63,8 @@ Also focusing on:
 
 Thanks to:
 
-- 100Devs and other free online dev communities
-- GitHub, and the devs who share their solutions
+- 100Devs and other online dev communities
+- GitHub, and the devs who share their problems/solutions
 - MDN Web Docs 📚 — extensively used for JavaScript and CSS references  
 - 
 ---
@@ -72,7 +72,3 @@ Thanks to:
 ## Final Thoughts
 
 This repo is my portfolio, workspace, and learning log.
-
-Coming from a clinical and academic background, I’ve learned that precision, systems thinking, and documentation all matter. And, all those same principles carry over, apply to code as well.
-
-I'm not aiming for perfect code but I'm building a process I can trust, learn, improve, and scale. Every code bug, its fix, and push is part of learning and leveling up. I’m here to learn effeciently, solve real problems, and contribute.
