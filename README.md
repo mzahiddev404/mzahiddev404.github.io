@@ -63,8 +63,8 @@ Also focusing on:
 
 Thanks to:
 
-- 100Devs and other online dev communities
-- GitHub, and the devs who share their problems/solutions
+- 100Devs and Developer communities and peer-learning groups that helped me grow
+- GitHub
 - MDN Web Docs 📚 — extensively used for JavaScript and CSS references  
 - 
 ---
