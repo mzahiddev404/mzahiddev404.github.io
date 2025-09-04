@@ -191,3 +191,18 @@ function setupSkillTooltips() {
     }
   });
 }
+
+// ==============================
+// BACK TO TOP BUTTON
+// ==============================
+const backToTop = document.querySelector('.btt');
+
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {         // threshold (px from top)
+      backToTop.classList.add('show'); // aligns with .btt.show in CSS
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+}
