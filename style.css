@@ -494,7 +494,7 @@ h1, h2, p, li {
 /******************************************/
 
 footer {
-  background-color: var(--clr-header-footer); /* Using root color for consistent branding */
+  background-color: var(--clr-footer-lg); /* corrected var name */
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -525,7 +525,7 @@ footer a:hover {
   padding: 0.75rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  opacity: 0;               /* hidden by default (new/js)*/
+  opacity: 0;               /* hidden by default (new/js) */
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease, background 0.2s ease;
   z-index: 1000;            /* above other content */
@@ -540,6 +540,7 @@ footer a:hover {
   opacity: 1;
   visibility: visible;
 }
+
 
 /******************************************
 /* MEDIA QUERY - COLOR SCHEME ADJUSTMENTS
