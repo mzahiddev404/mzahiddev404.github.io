@@ -144,15 +144,18 @@ function setupNavHoverEffects() {
  * CLOSE NAV ON LINK CLICK — hamburger mobile UX fix
  ******************************************/
 function setupNavLinkClose() {
-  const navLinks = document.querySelectorAll('.nav-menu a');
-  const navMenu = document.querySelector('.nav-menu');
-  const overlay = document.getElementById('overlay');
+  const navLinks = document.querySelectorAll('.nav-menu a');   // all nav menu links
+  const navMenu = document.querySelector('.nav-menu');        // the nav menu
+  const overlay = document.getElementById('overlay');        // the dark backdrop
 
+  
+  // Loop through each nav link
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('show');
-      overlay.style.opacity = '0';
-      overlay.style.pointerEvents = 'none';
+      // When any link is clicked:
+      navMenu.classList.remove('show');                    // close the menu
+      overlay.style.opacity = '0';                        // fade out overlay
+      overlay.style.pointerEvents = 'none';               // disable overlay clicks
     });
   });
 }
@@ -163,6 +166,7 @@ function setupNavLinkClose() {
 function setupSkillTooltips() {
   const skillLinks = document.querySelectorAll('.skill-link');
 
+  // Add click listener to each skill link
   skillLinks.forEach(link => {
     link.addEventListener('click', function () {
       skillLinks.forEach(other => {
@@ -170,10 +174,13 @@ function setupSkillTooltips() {
         other.querySelector('.skill-tooltip').style.display = 'none';
       });
 
+      
+    // Then show only the clicked one
       this.classList.add('active');
       const tooltip = this.querySelector('.skill-tooltip');
       tooltip.style.display = 'block';
-
+      
+    // Auto-hide tooltip after 3s
       clearTimeout(this.tooltipTimeout);
       this.tooltipTimeout = setTimeout(() => {
         tooltip.style.display = 'none';
@@ -182,6 +189,7 @@ function setupSkillTooltips() {
     });
   });
 
+  // If user clicks outside the skills section, close all tooltips
   document.addEventListener('click', (e) => {
     if (!e.target.closest('#skills')) {
       skillLinks.forEach(link => {
@@ -198,11 +206,18 @@ function setupSkillTooltips() {
 const backToTop = document.querySelector('.btt');
 
 if (backToTop) {
+  // Show/hide button on scroll
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {         // threshold (px from top)
-      backToTop.classList.add('show'); // aligns with .btt.show in CSS
+    if (window.scrollY > 50) {         // when scrolled more than 50px
+      backToTop.classList.add('show'); // makes button visible
     } else {
-      backToTop.classList.remove('show');
+      backToTop.classList.remove('show'); // hide button again
     }
+  });
+
+  // Smooth scroll to top when button is clicked
+  backToTop.addEventListener('click', (e) => {
+    e.preventDefault(); // stop default "jump" to top
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // smooth scroll
   });
 }
