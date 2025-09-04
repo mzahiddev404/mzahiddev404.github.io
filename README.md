@@ -1,4 +1,4 @@
-e# 🌐 Muhammad Zahid | Developer Portfolio
+# 🌐 Muhammad Zahid | Developer Portfolio
 
 This is my personal portfolio site, built using **HTML**, **CSS**, and **JavaScript**, as part of my ongoing full-stack development journey. I’ve been learning through online resources/communities such as youtube, Udemy, and programs like ASU's **AZNext Web Developer Program** in partnership with Cognizant (July 2025 cohort) and will update site as I further progress.
 
