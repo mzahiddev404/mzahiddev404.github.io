@@ -1,6 +1,6 @@
-# 🌐 Muhammad Zahid | Developer Portfolio
+e# 🌐 Muhammad Zahid | Developer Portfolio
 
-This is my personal portfolio site, built using **HTML**, **CSS**, and **JavaScript**, as part of my ongoing full-stack development journey. I’ve started learning through online resources such as youtube, Udemy, and I further advance with ASU's **AZNext Web Developer Program** in partnership with Cognizant (July 2025 cohort) and will update site as I further progress.
+This is my personal portfolio site, built using **HTML**, **CSS**, and **JavaScript**, as part of my ongoing full-stack development journey. I’ve been learning through online resources/communities such as youtube, Udemy, and programs like ASU's **AZNext Web Developer Program** in partnership with Cognizant (July 2025 cohort) and will update site as I further progress.
 
 Live site: [mzahiddev404.github.io](https://mzahiddev404.github.io)
 
@@ -8,9 +8,9 @@ Live site: [mzahiddev404.github.io](https://mzahiddev404.github.io)
 
 ## What This Project Is
 
-- A responsive portfolio showcasing my background, certifications, current skills, and personal projects
+- A responsive portfolio showcasing background, certifications, current skills, and personal projects
 - Designed to be clean, readable, PC, mobile-friendly, and easy to maintain (with comments for myself)
-- Also used as a place to test out/learn new things, layout tweaks, new HTML tags, JavaScript logic, and anything else I learn or break while learning - (extensively referenced resources such as MDN and online resources) 
+- Also used as a place to test out/learn new things, and anything else I learn or break while learning
 
 ---
 
@@ -40,21 +40,15 @@ Eventually I got it working the way I wanted. Plus, learned another CSS lesson.
 
 ---
 
-## Currently Learning
+## Further mastering
 
 `React ⚛️`, `Node.js 🌐`, `MongoDB 🍃`, `Git ✅`, `Agile 🌀`
-
-Also focusing on:
-
-- DOM manipulation and clean JavaScript
-- Git and GitHub workflow
-- code structure and file organization
 
 ---
 
 ## Next Steps
 
-- Further learn through AZNext Web Developer Program (ASU)
+- Keep learning !!!
 - Add more real-world projects with business logic and deployment
 
 ---
@@ -63,7 +57,7 @@ Also focusing on:
 
 Thanks to:
 
-- 100Devs and Developer communities and peer-learning groups that helped me grow
+- 100Devs, ASU + AZNext and Developer communities and peer-learning groups that helped me grow and still are...
 - GitHub
 - MDN Web Docs 📚 — extensively used for JavaScript and CSS references  
 - 
