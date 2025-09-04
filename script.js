@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setupMobileNav();         // toggle nav menu
   setupSmoothScroll();      // scroll to section
   setupSectionHighlight();  // highlight active nav link
-  setupNavHover();          // nav hover feedback
-  setupNavClose();          // auto close nav on click
+  setupNavHoverEffects();   // was setupNavHover()          // nav hover feedback
+setupNavLinkClose();      // was setupNavClose()          // auto close nav on click
   setupSkillTooltips();     // skill tooltip clicks
 
   window.addEventListener('scroll', highlightNavOnScroll);
