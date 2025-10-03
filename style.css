@@ -1,21 +1,30 @@
 /******************************************
-/* BASE VARIABLES (easy color management)
+/* BASE COLOR VARIABLES - (easy color management)
 /******************************************/
 
 :root {
-  /* === universal colors === */
-  --clr-bg-main: #f0f0f0;        /* site-wide neutral background */
-  --clr-text-main: #333;         /* readable text color */
-  --clr-accent: #00bfa6;         /* vibrant teal for links/hover/buttons */
-
-  /* === large screen theme (desktop) === */
+  /* main colors */
+  --clr-bg-main: #1e293b;        /* dark background */
+  --clr-text-main: #e2e8f0;      /* light text */
+  --clr-accent: #3b82f6;         /* blue accent */
+  --clr-accent-hover: #2563eb;   /* darker blue for hover */
+  --clr-accent-light: #60a5fa;   /* light blue */
+  --clr-white: #ffffff;          /* white */
   
-  --clr-header-lg: #1e3a5f;      /* deep navy-blue */
-  --clr-footer-lg: #1e3a5f;      /* matches header for consistency */
-  --clr-body-lg: #eef3f9;        /* soft bluish-gray */
+  /* card colors */
+  --clr-card-bg: #334155;         /* card background */
+  --clr-card-shadow: rgba(0,0,0,0.25); /* shadows */
+  --clr-card-border: #475569;    /* borders */
+  
+  /* header colors for different screens */
+  --clr-header-lg: #1e40af;      /* desktop large-screen*/
+  --clr-header-md: #2563eb;      /* tablet */
+  --clr-header-sm: #dc2626;      /* mobile small-screen*/
+  
+  /* gradients */
+  --gradient-primary: linear-gradient(135deg, #3b82f6, #1e40af);
+  --gradient-accent: linear-gradient(135deg, #60a5fa, #3b82f6);
 }
-
-/* mobile (480px) and tablet (768px) use their own values inside media queries */
 
 /******************************************
 /* GLOBAL RESET + BASE STYLES
@@ -35,23 +44,29 @@
   clear: both;
 }
 
-/* Subsection most of the font */
+/* main body */
 body {
-  font-family: Arial, sans-serif;
-  margin: 2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
   padding: 0;
-  background-color: var(--clr-body-lg); /* uses root var for large screens */
+  background-color: var(--clr-bg-main);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
   font-size: 16px;
   color: var(--clr-text-main);
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
 /******************************************
-/* NAVIGATION STYLES 
+/* NAVIGATION STYLES
 /******************************************/
 .container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .navbar {
@@ -86,7 +101,12 @@ body {
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
-  
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
 }
 
 /* Hamburger (hidden by default) */
@@ -213,6 +233,12 @@ header p {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -229,20 +255,40 @@ header p {
 /******************************************/
 
 main {
-  padding: 40px 0;
+  padding: 60px 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Headings for sections */
+/* section headings */
 section h2 {
-  color: var(--clr-dark);
-  font-size: 28px;
-  margin-bottom: 20px;
+  color: var(--clr-accent-light);
+  font-size: 32px;
+  margin-bottom: 30px;
   text-align: center;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* underline for headings */
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
 }
 
 section p {
   line-height: 1.6;
   margin-bottom: 20px;
+  color: var(--clr-text-main);
+  font-size: 16px;
 }
 
 ul {
@@ -262,6 +308,189 @@ section {
 h1, h2, p, li {
   margin: 20px;
 }
+
+/* === CERTIFICATIONS SECTION STYLING === */
+#certifications li {
+  background: var(--clr-card-bg);     /* Warm gray background */
+  padding: 25px;                      /* generous spacing */
+  margin: 25px 0;                     /* Better spacing between items */
+  border-radius: 12px;                /* Softer corners */
+  box-shadow: 0 4px 20px var(--clr-card-shadow); /* depth */
+  border: 1px solid var(--clr-card-border); /* border */
+  border-left: 4px solid var(--clr-accent); /* Professional blue accent */
+  transition: all 0.3s ease;          /* Smooth animations */
+  position: relative;                 /* hover effects */
+  overflow: hidden;                   /* gradient overlay */
+}
+
+#certifications li:hover {
+  transform: translateY(-3px);        /* card Lift effect */
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15); /* Blue glow */
+  border-left-color: var(--clr-accent-light); /* Lighter accent */
+}
+
+#certifications li strong {
+  color: var(--clr-accent-light);     /* Bright blue for program names */
+  font-size: 1.1em;                   /* Slightly larger size */
+  display: inline;                    /* Inline display to keep dates on same line */
+  margin-bottom: 8px;                 /* Space below program name */
+}
+
+#certifications li ul {
+  margin-top: 10px;                   /* Space above sub-items */
+}
+
+#certifications li ul li {
+  background: transparent;              /* No background for sub-items */
+  padding: 5px 0;                     /* Minimal padding */
+  margin: 5px 0;                      /* Minimal margin */
+  border: none;                       /* No borders */
+  box-shadow: none;                   /* No shadows */
+  border-left: none;                  /* No accent border */
+  font-size: 0.95em;                  /* Slightly smaller text */
+  color: var(--clr-text-main);        /* text color */
+}
+
+#certifications li ul li:hover {
+  transform: none;                    /* No hover effect for sub-items */
+  box-shadow: none;                   /* No hover shadow */
+}
+
+/* Ensure Further Learning keeps its special styling */
+#certifications .currently-learning li {
+  background: var(--gradient-accent) !important; /* Beautiful gradient background */
+  color: var(--clr-white) !important;          /* White text for readability */
+  padding: 8px 12px !important;               /* More generous padding */
+  border-radius: 8px !important;              /* Softer corners */
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;                /* Slightly bolder text */
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important; /* Blue shadow */
+  transition: all 0.3s ease !important;       /* Smooth hover effect */
+  display: inline-block !important;
+  margin: 8px 8px 8px 0 !important;           /* Better spacing */
+}
+
+#certifications .currently-learning li:hover {
+  transform: translateY(-2px) !important;      /* lift on hover */
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important; /* Enhanced shadow */
+}
+
+#certifications li a {
+  color: var(--clr-accent-light);     /* Blue color for links */
+  text-decoration: none;              /* No underline */
+  font-weight: 500;                  /* Medium weight */
+  transition: color 0.3s ease;       /* Smooth color transition */
+}
+
+#certifications li a:hover {
+  color: var(--clr-white);           /* White on hover */
+  text-decoration: underline;         /* Underline on hover */
+}
+
+/* === ABOUT ME SECTION STYLING === */
+#about {
+  background: var(--clr-card-bg);     /* gray background */
+  padding: 40px;                     
+  margin: 30px 0;                     /* Better spacing */
+  border-radius: 16px;               
+  box-shadow: 0 4px 20px var(--clr-card-shadow); /* depth */
+  border: 1px solid var(--clr-card-border); 
+  border-left: 4px solid var(--clr-accent); /* Professional blue accent */
+  position: relative;                 /* decorative elements */
+  overflow: hidden;                   /* gradient overlay */
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#about p {
+  font-size: 1.1em;                   /* larger for readability */
+  line-height: 1.7;                   /* line spacing */
+  margin-bottom: 20px;                /* Space between paragraphs */
+  color: var(--clr-text-main);        /* text color */
+}
+
+#about p:first-child {
+  font-size: 1.2em;                   /* Slightly larger first paragraph */
+  font-weight: 500;                   /* Medium weight for emphasis */
+}
+
+#about strong {
+  color: var(--clr-text-main);        /* Same color as rest of paragraph */
+  font-weight: 600;                   /* Bold weight */
+}
+
+/* === PROJECT CARDS STYLING (Professional) === */
+#projects li {
+  background: var(--clr-card-bg);     /* gray background */
+  padding: 25px;                     /* generous spacing */
+  margin: 25px 0;                     /* Better spacing between cards */
+  border-radius: 12px;                /* Softer corners */
+  box-shadow: 0 4px 20px var(--clr-card-shadow); /* Subtle depth */
+  border: 1px solid var(--clr-card-border); /* Subtle border */
+  border-left: 4px solid var(--clr-accent); /* Professional blue accent */
+  transition: all 0.3s ease;          /* Smooth animations */
+  position: relative;                 /* hover effects */
+  overflow: hidden;                   /* gradient overlay */
+}
+
+/* Add subtle gradient overlay on hover */
+#projects li:hover {
+  transform: translateY(-5px);        /* Lift effect */
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15); /* Blue glow */
+  border-left-color: var(--clr-accent-light); /* Lighter accent */
+}
+
+#projects li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#projects li:hover::before {
+  opacity: 1;
+}
+
+
+#projects li strong {
+  color: var(--clr-accent-light);     /* blue for project titles */
+  font-size: 20px;                   /* Slightly larger for better hierarchy */
+  font-weight: 600;                  /* Medium weight for emphasis */
+  display: block;
+  margin-bottom: 12px;               /* More space below title */
+  line-height: 1.3;                  /* Better line spacing */
+}
+
+#projects li {
+  font-size: 1.05em;                 /* Slightly larger text for readability */
+  line-height: 1.6;                  /* Better line spacing */
+}
+
+#projects li a {
+  color: var(--clr-accent-light);    /* Blue color for links */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;       /* Smooth color transition */
+}
+
+#projects li a:hover {
+  color: var(--clr-white);           /* White on hover */
+  text-decoration: underline;         /* Underline on hover */
+}
 /******************************************
 /* CURRENTLY LEARNING Section 
 /******************************************/
@@ -274,12 +503,20 @@ h1, h2, p, li {
 
 .currently-learning li {
   display: inline-block;
-  margin-right: 10px;
-  background-color: #f0f0f0;
-  padding: 6px 10px;
-  border-radius: 6px;
+  margin: 8px 8px 8px 0;           /* Better spacing */
+  background: var(--gradient-accent); /* Beautiful gradient background */
+  color: var(--clr-white);          /* White text */
+  padding: 8px 12px;               /* generous padding */
+  border-radius: 8px;              /* Softer corners */
   font-size: 0.95rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 500;                /* Slightly bolder text */
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); /* Blue shadow */
+  transition: all 0.3s ease;       /* Smooth hover effect */
+}
+
+.currently-learning li:hover {
+  transform: translateY(-2px);      /* lift on hover */
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); /* Enhanced shadow */
 }
 
 /******************************************
@@ -293,10 +530,25 @@ h1, h2, p, li {
   position: relative;
 }
 
+/* === SKILL CARDS STYLING (Interactive) === */
 .skill-list li {
-  margin: 10px;
-  position: relative;
+  margin: 12px;                        /* Better spacing */
+  position: relative;                  /* tooltip positioning */
+  background: var(--clr-card-bg);      /* gray background */
+  padding: 18px;                       /* generous padding */
+  border-radius: 10px;                 /* Softer corners */
+  box-shadow: 0 3px 12px var(--clr-card-shadow); /* Subtle depth */
+  border: 1px solid var(--clr-card-border); /* Subtle border */
+  transition: all 0.3s ease;          /* Smooth animations */
+  cursor: pointer;                     /* Indicates interactivity */
 }
+
+.skill-list li:hover {
+  transform: translateY(-3px);         /* Lift effect */
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2); /* Blue glow */
+  border-color: var(--clr-accent-light); /* Accent border */
+}
+
 
 .skill-link {
   display: block;
@@ -310,16 +562,17 @@ h1, h2, p, li {
   top: -50px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--clr-dark);
-  color: #fff;
-  font-size: 0.7rem;
+  background-color: rgba(0, 0, 0, 0.9);  /* Dark background for contrast */
+  color: var(--clr-white);               /* White text for readability */
+  font-size: 0.8rem;                    /* Slightly larger for readability */
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 6px;                   /* Softer corners */
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  z-index: 1;
+  z-index: 1000;                        /* Higher z-index */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Better shadow */
   width: max-content;
 }
 
@@ -353,12 +606,38 @@ h1, h2, p, li {
 /* CONTACT SECTION
 /******************************************/
 
-.contact-section {
-  padding: 60px 0;
-  background-color: #f5f5f5;
+/* === CONTACT SECTION STYLING (Professional) === */
+#contact {
+  padding: 80px 0;                      /* generous spacing */
+  background: var(--gradient-primary);  /* gradient background */
+  border-radius: 16px;                  /* Softer corners */
+  margin: 30px 0;                       /* Better spacing */
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2); /* Blue-tinted shadow */
+  position: relative;                   /* decorative elements */
+  overflow: hidden;                     /* gradient effects */
 }
 
-.contact-section h2 {
+/* Add subtle pattern overlay */
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+#contact h2 {
+  position: relative;
+  z-index: 1;
+  color: var(--clr-white);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#contact h2 {
   text-align: center;
   margin-bottom: 40px;
   font-size: 2.5rem;
@@ -397,10 +676,11 @@ h1, h2, p, li {
   align-items: center;
   justify-content: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--clr-white);
 }
 
 .contact-link:hover {
-  color: var(--clr-hover);
+  color: var(--clr-white);           /* White text for readability */
 }
 
 .contact-link:hover i {
@@ -421,11 +701,15 @@ h1, h2, p, li {
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.7rem;
-  color: #666;
+  font-size: 0.8rem;               /* Slightly larger for readability */
+  color: var(--clr-white);         /* White text for readability */
+  background: rgba(0, 0, 0, 0.9);  /* Dark background for contrast */
+  padding: 4px 8px;                /* Padding for better appearance */
+  border-radius: 4px;              /* Rounded corners */
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s;
+  z-index: 10;                     /* Ensure tooltip appears above other elements */
 }
 
 .contact-link[title]:hover::after {
@@ -546,40 +830,62 @@ footer a:hover {
 /* MEDIA QUERY - COLOR SCHEME ADJUSTMENTS
 /******************************************/
 
-/* Large screens - improved color */
+/* === DESKTOP SCREENS (1280px+) === */
 @media (min-width: 1280px) {
   header {
-    background-color: #1f2d3d; /* more contrast */
+    background-color: var(--clr-header-lg); /* Deep navy-blue */
   }
 
   footer {
-    background-color: #1f2d3d;
-  }
-}
-
-/* Medium screens - keep same, already solid */
-@media (max-width: 1279px) and (min-width: 600px) {
-  header {
-    background-color: #2980b9; /* don't touch */
-  }
-
-  footer {
-    background-color: #2980b9;
-  }
-}
-
-/* Small screens - don't change */
-@media (max-width: 599px) {
-  header {
-    background-color: #e74c3c;
-  }
-
-  footer {
-    background-color: #e74c3c;
+    background-color: var(--clr-header-lg); /* Match header */
   }
 
   body {
-    background-color: #fdf6e3; /* warm neutral for contrast */
+    background-color: var(--clr-bg-main); /* Deep dark background */
+    color: var(--clr-text-main);          /* Bright white text */
+  }
+}
+
+/* === TABLET SCREENS (600px - 1279px) === */
+@media (max-width: 1279px) and (min-width: 600px) {
+  header {
+    background-color: var(--clr-header-md); /* Medium blue */
+  }
+
+  footer {
+    background-color: var(--clr-header-md); /* Match header */
+  }
+
+  body {
+    background-color: var(--clr-bg-main); /* Deep dark background */
+    color: var(--clr-text-main);          /* Bright white text */
+  }
+
+  /* Fix navigation underline for medium screens */
+  .nav-menu a {
+    padding: 12px 18px;                   /* Slightly more padding */
+  }
+
+  .nav-menu a::after {
+    width: calc(100% + 36px);             /* Extend beyond padding */
+    left: -18px;                           /* Start before padding */
+    bottom: 0;                             /* Position at bottom */
+  }
+}
+
+/* === MOBILE SCREENS (under 600px) === */
+@media (max-width: 599px) {
+  header {
+    background-color: var(--clr-header-sm); /* Orange-red */
+  }
+
+  footer {
+    background-color: var(--clr-header-sm); /* Match header */
+  }
+
+  body {
+    background-color: var(--clr-bg-main); /* Deep dark background */
+    color: var(--clr-text-main);          /* Bright white text */
   }
 }
 
