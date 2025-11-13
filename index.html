@@ -33,7 +33,7 @@
     <!-- Preconnect for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
     
@@ -72,6 +72,33 @@
   </head>
 
   <body>
+    <!-- Kite Festival - Competing Kites (Pakistani Styles) -->
+    <!-- Patang (Traditional Diamond) -->
+    <div class="kite kite-patang kite-1"></div>
+    <div class="kite kite-patang kite-2"></div>
+    <!-- Dedh Kanni (Broader kite) -->
+    <div class="kite kite-dedh-kanni kite-3"></div>
+    <div class="kite kite-dedh-kanni kite-4"></div>
+    <!-- Tukkal (Twin double-bow) -->
+    <div class="kite kite-tukkal kite-5"></div>
+    <!-- Diamond (Simple) -->
+    <div class="kite kite-diamond kite-6"></div>
+    <div class="kite kite-diamond kite-7"></div>
+    <div class="kite kite-patang kite-8"></div>
+    
+    <!-- Floating terminal code snippets -->
+    <div class="floating-code">npm install</div>
+    <div class="floating-code">git commit</div>
+    <div class="floating-code">python main.py</div>
+    <div class="floating-code">npm start</div>
+    
+    <!-- Subtle floating particles -->
+    <div class="floating-particle"></div>
+    <div class="floating-particle"></div>
+    <div class="floating-particle"></div>
+    <div class="floating-particle"></div>
+    <div class="floating-particle"></div>
+    <div class="floating-particle"></div>
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     
@@ -137,10 +164,25 @@
     <header id="home">
       <div class="geometric-pattern"></div>
       <div class="header-content">
-        <h1>Muhammad Zahid</h1>
-        <p class="tagline">
-          <span class="typing-text"></span><span class="cursor">|</span>
-        </p>
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span class="terminal-dot terminal-dot-red"></span>
+            <span class="terminal-dot terminal-dot-yellow"></span>
+            <span class="terminal-dot terminal-dot-green"></span>
+            <span class="terminal-title">mzahid@portfolio:~</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="terminal-command">whoami</span>
+            </div>
+            <div class="terminal-output">Muhammad Zahid</div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span class="typing-text"></span><span class="cursor">█</span>
+            </div>
+          </div>
+        </div>
         <p class="subtitle">I build software that works.</p>
         <div class="cta-buttons">
           <a href="#projects" class="btn btn-primary">
@@ -163,15 +205,15 @@
       <section id="about">
         <h2>About Me</h2>
         <p class="about-lead">
-          Three years in hospital ERs. When systems crash at 2 AM and doctors can't access patient records, you learn what "works in production" actually means.
+          Three years managing patient workflows in hospital ERs. When critical systems fail at 2 AM and patient care is compromised, you learn what production reliability actually means.
         </p>
         <p>
-          I build software that doesn't break. Python, FastAPI, Next.js, React. If it's in my GitHub, it's deployed and being used.
+          I build production systems that don't fail. Python, FastAPI, Next.js, React. Every application in my portfolio is deployed, tested, and handling real user traffic.
         </p>
         
         <div class="why-i-code">
           <h3>Why I Code</h3>
-          <p>After watching doctors waste 20 minutes on broken software during emergencies, I decided to build things that actually work. Every line of code I write is tested. Every application I ship is used by real people.</p>
+          <p>After witnessing critical system failures impact patient care, I committed to building software with zero tolerance for downtime. Every system I build includes comprehensive testing, monitoring, and documentation. Production reliability isn't optional—it's the baseline.</p>
         </div>
 
         <div class="healthcare-timeline">
@@ -184,7 +226,7 @@
             <div class="timeline-arrow">→</div>
             <div class="timeline-item">
               <span class="timeline-year">2025</span>
-              <span class="timeline-desc">ASU Bootcamp - Built production e-commerce site</span>
+              <span class="timeline-desc">Production Systems - Built and deployed e-commerce platform</span>
             </div>
             <div class="timeline-arrow">→</div>
             <div class="timeline-item">
@@ -214,7 +256,7 @@
       <section id="projects">
         <h2>Projects</h2>
         <p class="projects-intro">
-          Real applications. Real users.
+          Production systems handling real traffic. Tested, deployed, monitored.
         </p>
         <ul>       
           <li class="featured-project">
@@ -258,10 +300,10 @@
           </li>
           <li>
               <strong>Knots by Esmera (E-Commerce Platform)</strong>
-              <p>Jewelry e-commerce site. Processes real orders, handles payments. Built at ASU, deployed live.</p>
+              <p>Production e-commerce platform processing real customer orders. Full payment integration, inventory management, live deployment.</p>
               <div class="project-details">
                 <div class="project-challenge">
-                  <strong>Challenge:</strong> Build a production-ready e-commerce site for a jewelry business during bootcamp timeframe.
+                  <strong>Challenge:</strong> Build a production-ready e-commerce site for a jewelry business with tight deadlines and real customer requirements.
                 </div>
                 <div class="project-solution">
                   <strong>Solution:</strong> Used Node.js/Express for the backend, MySQL for inventory, and implemented payment processing with proper error handling.
@@ -389,7 +431,7 @@
               <span class="skill-chip" data-skill="FastAPI">FastAPI <span class="skill-context">Current backend framework</span></span>
               <span class="skill-chip" data-skill="Node.js">Node.js <span class="skill-context">E-commerce project backend</span></span>
               <span class="skill-chip" data-skill="Express">Express <span class="skill-context">RESTful API development</span></span>
-              <span class="skill-chip" data-skill="Java">Java <span class="skill-context">Bootcamp training</span></span>
+              <span class="skill-chip" data-skill="Java">Java <span class="skill-context">Enterprise development</span></span>
               <span class="skill-chip" data-skill="Spring Boot">Spring Boot <span class="skill-context">Enterprise patterns</span></span>
             </div>
           </div>
@@ -468,6 +510,44 @@
         </div>
       </section>
 
+      <!-- Outside Code -->
+      <section id="outside-code">
+        <h2>Outside Code</h2>
+        <div class="outside-code-content">
+          <p>When I'm not coding, I'm learning. Healthcare taught me that continuous improvement isn't optional. I read technical documentation, contribute to open source, and build side projects to test new ideas.</p>
+          <p>I speak three languages (English, Urdu, Hindi) which helps me work with diverse teams and understand different perspectives on problem-solving.</p>
+        </div>
+      </section>
+
+      <!-- What I Do vs Don't Do -->
+      <section id="what-i-do">
+        <h2>What I Do vs What I Don't Do</h2>
+        <div class="do-dont-grid">
+          <div class="do-column">
+            <h3>What I Do</h3>
+            <ul>
+              <li>Build production-ready applications</li>
+              <li>Write tested, maintainable code</li>
+              <li>Deploy and maintain live systems</li>
+              <li>Solve real problems with technology</li>
+              <li>Learn from production issues</li>
+              <li>Choose tools based on requirements</li>
+            </ul>
+          </div>
+          <div class="dont-column">
+            <h3>What I Don't Do</h3>
+            <ul>
+              <li>Build demos that never ship</li>
+              <li>Use trendy tech without reason</li>
+              <li>Skip testing to save time</li>
+              <li>Build features nobody needs</li>
+              <li>Ignore production issues</li>
+              <li>Over-engineer simple solutions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- contact -->
       <section id="contact">
         <h2>Let's Talk</h2>
@@ -485,6 +565,16 @@
           </ul>
         </div>
 
+        <div class="contact-me-about">
+          <h3>Contact Me About</h3>
+          <ul>
+            <li>Full-time software engineering opportunities</li>
+            <li>Projects that need production-ready code</li>
+            <li>Teams building with Python, React, or Next.js</li>
+            <li>Healthcare tech or mission-critical applications</li>
+          </ul>
+        </div>
+
         <div class="contact-cta">
           <a href="mailto:mzahiddev404@gmail.com" class="contact-primary-btn">
             <i class="fa-solid fa-envelope"></i>
@@ -493,6 +583,10 @@
           <a href="#" class="contact-resume-btn" onclick="alert('Resume download coming soon!'); return false;">
             <i class="fa-solid fa-download"></i>
             Download Resume
+          </a>
+          <a href="#" class="contact-calendar-btn" onclick="alert('Calendar booking coming soon!'); return false;">
+            <i class="fa-solid fa-calendar"></i>
+            Schedule a Call
           </a>
           <p class="contact-response-time">Response time: 48 hours</p>
         </div>
