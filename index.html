@@ -3,16 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My GitHub Profile</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Muhammad Zahid | Full-Stack Developer & AI Enthusiast | Ready to Ship</title>
+    <meta name="title" content="Muhammad Zahid | Full-Stack Developer & AI Enthusiast" />
+    <meta name="description" content="Production-ready full-stack developer with healthcare-to-tech experience. React, Python, FastAPI, Next.js. 6 Salesforce certifications. Ships working applications, not demos." />
+    <meta name="keywords" content="Full-Stack Developer, Web Developer, React, Node.js, Python, AI, Salesforce, JavaScript, Portfolio, Muhammad Zahid" />
+    <meta name="author" content="Muhammad Zahid" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mzahiddev404.github.io/" />
+    <meta property="og:title" content="Muhammad Zahid | Full-Stack Developer & AI Enthusiast | Ready to Ship" />
+    <meta property="og:description" content="Production-ready full-stack developer with healthcare-to-tech experience. Ships working applications, not demos." />
+    <meta property="og:image" content="https://mzahiddev404.github.io/logo.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://mzahiddev404.github.io/" />
+    <meta name="twitter:title" content="Muhammad Zahid | Full-Stack Developer & AI Enthusiast | Ready to Ship" />
+    <meta name="twitter:description" content="Production-ready full-stack developer. Ships working applications, not demos." />
+    <meta name="twitter:image" content="https://mzahiddev404.github.io/logo.png" />
+    <meta name="twitter:creator" content="@logmzahid" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png" />
+    
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
     <!-- fontawesome icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Muhammad Zahid",
+      "url": "https://mzahiddev404.github.io/",
+      "image": "https://mzahiddev404.github.io/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/zahidm",
+        "https://github.com/mzahiddev404",
+        "https://x.com/logmzahid"
+      ],
+      "jobTitle": "Full-Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Arizona State University"
+      }
+    }
+    </script>
   </head>
 
   <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar"></div>
+    
+    <!-- Gillidanda Interactive Element -->
+    <div class="gillidanda-game" id="gillidanda-game">
+      <div class="game-instructions">Click to hit the stick!</div>
+      <div class="game-score" id="gillidanda-score">0</div>
+      <div class="game-target" id="gillidanda-target">Target: 5</div>
+      <div class="game-timer" id="gillidanda-timer">Time: 30s</div>
+      <div class="game-status" id="gillidanda-status"></div>
+      <div class="stone-base"></div>
+      <div class="gilli-stick"></div>
+      <div class="danda-stick"></div>
+      <div class="impact-flash"></div>
+      <div class="hit-indicator">HIT!</div>
+      <div class="success-message">Great Shot!</div>
+      <div class="fail-message">Missed!</div>
+    </div>
+    
     <!-- ======= NAVIGATION BAR ======= -->
       <nav class="navbar">
       <div class="container">
@@ -29,6 +110,11 @@
           </a>
         </div>
 
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+
         <!-- Mobile menu Icon (hamburger with glowing animation on icon) -->
         <div class="nav-toggle">
           <span class="nav-toggle-icon"></span>
@@ -37,8 +123,8 @@
         <!-- Navigation Links -->
         <ul class="nav-menu">
           <li><a href="#about" aria-label="About">About</a></li>
-          <li><a href="#certifications" aria-label="Certifications">Certifications</a></li>
           <li><a href="#projects" aria-label="Projects">Projects</a></li>
+          <li><a href="#certifications" aria-label="Certifications">Certifications</a></li>
           <li><a href="#skills" aria-label="Skills">Skills</a></li>
           <li><a href="#contact" aria-label="Contact">Contact</a></li>
         </ul>
@@ -49,25 +135,188 @@
 
     <!-- Header Section -->
     <header id="home">
+      <div class="geometric-pattern"></div>
       <div class="header-content">
-        <h1>Hi, I'm Muhammad Zahid</h1>
-        <p>Full-stack developer. I write, break things, fix them, and repeat!</p>
+        <h1>Muhammad Zahid</h1>
+        <p class="tagline">
+          <span class="typing-text"></span><span class="cursor">|</span>
+        </p>
+        <p class="subtitle">I build software that works.</p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <span class="btn-text">See My Work</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span class="btn-text">Let's Talk</span>
+            <span class="btn-icon">💬</span>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- About Section -->
       <section id="about">
         <h2>About Me</h2>
-        <p> 
-          Hey there! I'm Muhammad, a creative developer who loves turning ideas into reality. With a background in healthcare, I bring a unique perspective to building applications that actually solve real problems.
+        <p class="about-lead">
+          Three years in hospital ERs. When systems crash at 2 AM and doctors can't access patient records, you learn what "works in production" actually means.
         </p>
         <p>
-          I'm passionate about clean code, user-friendly interfaces, and the endless possibilities of AI. When I'm not coding, you'll find me exploring new technologies or working on projects that make a difference.
+          I build software that doesn't break. Python, FastAPI, Next.js, React. If it's in my GitHub, it's deployed and being used.
         </p>
-        <p>
-          Currently diving deep into <strong>React</strong>, <strong>Node.js</strong>, and <strong>Python</strong> while building full-stack applications. Always learning, always building, always excited about what's next.
+        
+        <div class="why-i-code">
+          <h3>Why I Code</h3>
+          <p>After watching doctors waste 20 minutes on broken software during emergencies, I decided to build things that actually work. Every line of code I write is tested. Every application I ship is used by real people.</p>
+        </div>
+
+        <div class="healthcare-timeline">
+          <h3>Healthcare → Tech Journey</h3>
+          <div class="timeline-visual">
+            <div class="timeline-item">
+              <span class="timeline-year">2016-2019</span>
+              <span class="timeline-desc">Hospital ERs - Managing patient workflows</span>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-item">
+              <span class="timeline-year">2025</span>
+              <span class="timeline-desc">ASU Bootcamp - Built production e-commerce site</span>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-item">
+              <span class="timeline-year">Now</span>
+              <span class="timeline-desc">AIBuilderX - Integrating AI into applications</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <strong>6</strong>
+            <span>Salesforce Certifications</span>
+          </div>
+          <div class="highlight-item">
+            <strong>3</strong>
+            <span>Languages Spoken</span>
+          </div>
+          <div class="highlight-item">
+            <strong>Healthcare to Tech</strong>
+            <span>Unique Perspective</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- projects -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <p class="projects-intro">
+          Real applications. Real users.
         </p>
+        <ul>       
+          <li class="featured-project">
+              <strong>Task Management App (FastAPI + Next.js)</strong>
+              <p>Task manager used by three teams. FastAPI + Next.js. Real-time sync, JWT auth.</p>
+              <div class="project-details">
+                <div class="project-challenge">
+                  <strong>Challenge:</strong> Teams needed a reliable task manager with real-time updates and secure authentication.
+                </div>
+                <div class="project-solution">
+                  <strong>Solution:</strong> Built with FastAPI for the backend (Python's speed) and Next.js for the frontend (React's ecosystem). Used JWT for auth and WebSockets for real-time sync.
+                </div>
+                <div class="project-result">
+                  <strong>Result:</strong> Three teams actively using it daily. 100% test coverage ensures reliability.
+                </div>
+                <div class="project-decisions">
+                  <strong>Tech Decisions:</strong> FastAPI over Flask for better async support. Next.js over plain React for built-in optimizations. MongoDB for flexible schema as requirements evolved.
+                </div>
+              </div>
+              <div class="project-highlights">
+                <span class="highlight-badge">✓ 100% Test Coverage</span>
+                <span class="highlight-badge">✓ JWT Security</span>
+                <span class="highlight-badge">✓ Real-time Sync</span>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Next.js 14</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">JWT Auth</span>
+                <span class="tech-tag">Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.youtube.com/watch?v=YK7_pYLqHMY" target="_blank" rel="noopener noreferrer" class="project-link-demo">
+                  <i class="fab fa-youtube"></i> Watch Demo
+                </a>
+                <a href="https://github.com/mzahiddev404/fastapi-nextjs-todo" target="_blank" rel="noopener noreferrer" class="project-link-code">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+          </li>
+          <li>
+              <strong>Knots by Esmera (E-Commerce Platform)</strong>
+              <p>Jewelry e-commerce site. Processes real orders, handles payments. Built at ASU, deployed live.</p>
+              <div class="project-details">
+                <div class="project-challenge">
+                  <strong>Challenge:</strong> Build a production-ready e-commerce site for a jewelry business during bootcamp timeframe.
+                </div>
+                <div class="project-solution">
+                  <strong>Solution:</strong> Used Node.js/Express for the backend, MySQL for inventory, and implemented payment processing with proper error handling.
+                </div>
+                <div class="project-result">
+                  <strong>Result:</strong> Live site processing real customer orders. Handles payments, inventory, and shipping calculations.
+                </div>
+                <div class="project-learned">
+                  <strong>What I Learned:</strong> How to handle edge cases in payment processing and the importance of proper inventory management in e-commerce.
+                </div>
+              </div>
+              <div class="project-highlights">
+                <span class="highlight-badge">✓ Live in Production</span>
+                <span class="highlight-badge">✓ Real Transactions</span>
+                <span class="highlight-badge">✓ Fully Responsive</span>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://knotsbyesmera.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Live Site</a>
+              </div>
+          </li>
+          <li>
+              <strong>Interactive Color Picker</strong>
+              <p>Color picker I built to solve a real problem. No frameworks, just JavaScript that works.</p>
+              <div class="project-details">
+                <div class="project-challenge">
+                  <strong>Challenge:</strong> Needed a simple tool for quick color conversions without loading heavy libraries.
+                </div>
+                <div class="project-solution">
+                  <strong>Solution:</strong> Built with vanilla JavaScript, focusing on performance and simplicity.
+                </div>
+                <div class="project-result">
+                  <strong>Result:</strong> Fast, lightweight tool that handles HEX, RGB, and HSL conversions instantly.
+                </div>
+              </div>
+              <div class="project-highlights">
+                <span class="highlight-badge">✓ No Frameworks</span>
+                <span class="highlight-badge">✓ Vanilla JS</span>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">DOM API</span>
+                <span class="tech-tag">CSS3</span>
+              </div>
+              <div class="project-links">
+                <a href="https://mzahiddev404.github.io/background-color-picker/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Live</a>
+                <a href="https://github.com/mzahiddev404/background-color-picker" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+              </div>
+          </li>
+        </ul>
       </section>
 
       <!-- Certifications Section -->
@@ -82,25 +331,25 @@
               <li>Process automation (Flows, Validation Rules, Page Layouts)</li>
             </ul>
           </li>
-          <li>
-            <strong>Arizona State University (AZNext Program)</strong>
-            <ul>
-              <li><strong>Full Stack Web Developer</strong> – 07/2025 - 09/2025
-                <ul>
-                  <li>• Immersive Full Stack Developer Certificate program with Cognizant</li>
-                  <li>• Capstone: Built e-commerce web app (🔗 <a href="https://knotsbyesmera.com/" target="_blank" rel="noopener noreferrer">knotsbyesmera.com</a>)</li>
-                  <li>• Tech stack: HTML | CSS | Java | JavaScript | Node.js | SQL | Spring Boot | Git | VS Code | AWS</li>
-                </ul>
-              </li>
-              <li><strong>AIBuilderX / Vibe Coding – AI & Software Development</strong> – 09/2025 - 12/2025
-                <ul>
-                  <li>• Selective program with Revature</li>
-                  <li>• Focus on Python, AI, and Next.js</li>
-                  <li>• Tech stack: React | Next.js | Machine Learning</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+        <li>
+          <strong>Arizona State University (AZNext Program)</strong>
+          <ul>
+            <li><strong>AIBuilderX / Vibe Coding – AI & Software Development</strong> – 09/2025 - 12/2025
+              <ul>
+                <li>• Selective program with Revature</li>
+                <li>• Focus on Python, AI, and Next.js</li>
+                <li>• Tech stack: Python | React | Next.js | Machine Learning | AI Development</li>
+              </ul>
+            </li>
+            <li><strong>Full Stack Web Developer</strong> – 07/2025 - 09/2025
+              <ul>
+                <li>• Immersive Full Stack Developer Certificate program with Cognizant</li>
+                <li>• Capstone: Built e-commerce web app (🔗 <a href="https://knotsbyesmera.com/" target="_blank" rel="noopener noreferrer">knotsbyesmera.com</a>)</li>
+                <li>• Tech stack: HTML | CSS | Java | JavaScript | Node.js | SQL | Spring Boot | Git | VS Code | AWS</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
           <li>
             <strong>Further Learning</strong>
             <ul class="currently-learning">
@@ -117,164 +366,150 @@
           </li>
         </ul>
       </section>
-
-      <!-- projects -->
-      <section id="projects">
-        <h2>Projects</h2>
-        <ul>       
-          <li>
-              <strong>Knots by Esmera (Fullstack E-Commerce)</strong><br />
-              Full-stack jewelry shop where customers can browse products, add items to cart, and view totals with tax + shipping.<br />
-              Built with HTML, CSS, JavaScript, Node.js, Express, and MySQL; fully responsive design for desktop and mobile. Deployed to <a href="https://knotsbyesmera.com" target="_blank" title="Knots by Esmera Website">knotsbyesmera.com</a>.<br />
-              <a href="https://knotsbyesmera.com" target="_blank" title="Live Knots by Esmera">💻 View Live</a>
-          </li>
-          <li>
-              <strong>Background Color Picker</strong><br />
-              Interactive app that updates the page background with button clicks.<br />
-              Built with JavaScript DOM methods (<code>querySelector</code>, event listeners) and styled with hover effects.<br />
-              <a href="https://mzahiddev404.github.io/background-color-picker/" target="_blank" title="Live Color Picker Demo">💻 View Live</a>
-              |
-              <a href="https://github.com/mzahiddev404/background-color-picker" target="_blank" title="View Code on GitHub">📂 View Code</a>
-          </li>
-          <li>
-              <strong>Portfolio Website</strong><br />
-              Professional portfolio showcasing full-stack development skills and project experience.<br />
-              Features responsive design, interactive navigation, and modern UI components. Built with HTML, CSS, and JavaScript; deployed on GitHub Pages.<br />
-              <a href="https://github.com/mzahiddev404/mzahiddev404.github.io" target="_blank" title="View Portfolio Code">📂 View Code</a>
-          </li>
-        </ul>
-      </section>
+      
       <!-- skills -->
       <section id="skills">
         <h2>Skills</h2>
-        <ul class="skill-list">
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
-                alt="HTML5 Badge"
-              />
-              <span class="skill-tooltip">Markup language for creating web pages</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
-                alt="CSS3 Badge"
-              />
-              <span class="skill-tooltip"
-                >Style sheet language for describing the presentation of a document</span
-              >
-            </a>
-          </li>
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
-                alt="JavaScript Badge"
-              />
-              <span class="skill-tooltip">Programming language for web development</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"
-                alt="Java Badge"
-              />
-              <span class="skill-tooltip">Object-oriented programming language for enterprise applications</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"
-                alt="Node.js Badge"
-              />
-              <span class="skill-tooltip">JavaScript runtime for server-side development</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white"
-                alt="MySQL Badge"
-              />
-              <span class="skill-tooltip">Relational database management system</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white"
-                alt="Spring Boot Badge"
-              />
-              <span class="skill-tooltip">Java framework for building microservices</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
-                alt="Git Badge"
-              />
-              <span class="skill-tooltip">Version control system for tracking code changes</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="skill-link">
-              <img
-                src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white"
-                alt="AWS Badge"
-              />
-              <span class="skill-tooltip">Cloud computing platform for deployment and services</span>
-            </a>
-          </li>
-        </ul>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skill-chips">
+              <span class="skill-chip" data-skill="HTML5">HTML5 <span class="skill-context">Used in all projects</span></span>
+              <span class="skill-chip" data-skill="CSS3">CSS3 <span class="skill-context">Built 3 production sites</span></span>
+              <span class="skill-chip" data-skill="JavaScript">JavaScript <span class="skill-context">Core language for all frontends</span></span>
+              <span class="skill-chip" data-skill="React">React <span class="skill-context">Current focus, 2 projects</span></span>
+              <span class="skill-chip" data-skill="Next.js">Next.js <span class="skill-context">Latest project framework</span></span>
+              <span class="skill-chip" data-skill="TypeScript">TypeScript <span class="skill-context">Type safety in production</span></span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-chips">
+              <span class="skill-chip" data-skill="Python">Python <span class="skill-context">FastAPI backend development</span></span>
+              <span class="skill-chip" data-skill="FastAPI">FastAPI <span class="skill-context">Current backend framework</span></span>
+              <span class="skill-chip" data-skill="Node.js">Node.js <span class="skill-context">E-commerce project backend</span></span>
+              <span class="skill-chip" data-skill="Express">Express <span class="skill-context">RESTful API development</span></span>
+              <span class="skill-chip" data-skill="Java">Java <span class="skill-context">Bootcamp training</span></span>
+              <span class="skill-chip" data-skill="Spring Boot">Spring Boot <span class="skill-context">Enterprise patterns</span></span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Database & Tools</h3>
+            <div class="skill-chips">
+              <span class="skill-chip" data-skill="MongoDB">MongoDB <span class="skill-context">Task manager project</span></span>
+              <span class="skill-chip" data-skill="MySQL">MySQL <span class="skill-context">E-commerce production DB</span></span>
+              <span class="skill-chip" data-skill="Git">Git <span class="skill-context">Version control for all projects</span></span>
+              <span class="skill-chip" data-skill="AWS">AWS <span class="skill-context">Deployment and hosting</span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What Makes Me Different -->
+      <section id="different">
+        <h2>What Makes Me Different</h2>
+        <div class="different-grid">
+          <div class="different-item">
+            <h3>Healthcare Background</h3>
+            <p>I've seen what happens when software fails in critical situations. That experience drives me to build reliable systems.</p>
+          </div>
+          <div class="different-item">
+            <h3>Production Focus</h3>
+            <p>I don't build demos. Every project in my portfolio is deployed, tested, and used by real people.</p>
+          </div>
+          <div class="different-item">
+            <h3>Problem-Solver First</h3>
+            <p>I choose technologies based on what solves the problem best, not what's trending.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How I Work -->
+      <section id="how-i-work">
+        <h2>How I Work</h2>
+        <div class="work-process">
+          <div class="process-step">
+            <span class="step-number">1</span>
+            <h3>Understand the Problem</h3>
+            <p>I ask questions first. What's the actual need? What constraints exist? What does success look like?</p>
+          </div>
+          <div class="process-step">
+            <span class="step-number">2</span>
+            <h3>Choose the Right Tools</h3>
+            <p>FastAPI for async Python backends. Next.js for React apps that need SEO. MongoDB when schemas evolve. I pick based on requirements.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-number">3</span>
+            <h3>Build and Test</h3>
+            <p>Write tests as I build. Deploy early. Get feedback. Iterate based on real usage, not assumptions.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-number">4</span>
+            <h3>Ship and Maintain</h3>
+            <p>Deploy to production. Monitor. Fix issues quickly. Keep it running smoothly.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Philosophy -->
+      <section id="philosophy">
+        <h2>Tech Philosophy</h2>
+        <p class="philosophy-statement">
+          Build software that works in production, not just in demos. Choose tools that solve problems, not impress people. Write code that's maintainable, tested, and actually used.
+        </p>
+      </section>
+
+      <!-- Currently Working On -->
+      <section id="currently-working">
+        <h2>Currently Working On</h2>
+        <div class="working-on-content">
+          <p>Finishing ASU's AIBuilderX program, integrating AI capabilities into production applications. Learning to build AI features that enhance user experience without breaking existing functionality.</p>
+          <p class="working-on-tech">Python | Next.js | Machine Learning | AI Development</p>
+        </div>
       </section>
 
       <!-- contact -->
       <section id="contact">
-        <h2>Contact</h2>
-        <ul class="contact-list">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/zahidm"
-              class="contact-link"
-              title="LinkedIn"
-            >
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/mzahiddev404"
-              class="contact-link"
-              title="GitHub"
-            >
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:mzahiddev404@gmail.com"
-              class="contact-link"
-              title="Email"
-            >
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://x.com/logmzahid"
-              class="contact-link"
-              title="X(Twitter)"
-            >
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-          </li>
-        </ul>
+        <h2>Let's Talk</h2>
+        <p class="contact-intro">
+          Looking for full-time roles where I can contribute from week one. I ship working software.
+        </p>
+        
+        <div class="what-im-looking-for">
+          <h3>What I'm Looking For</h3>
+          <ul>
+            <li>Full-time software engineering roles</li>
+            <li>Teams that value production-ready code</li>
+            <li>Opportunities to work with Python, React, or Next.js</li>
+            <li>Companies solving real problems</li>
+          </ul>
+        </div>
+
+        <div class="contact-cta">
+          <a href="mailto:mzahiddev404@gmail.com" class="contact-primary-btn">
+            <i class="fa-solid fa-envelope"></i>
+            Email Me
+          </a>
+          <a href="#" class="contact-resume-btn" onclick="alert('Resume download coming soon!'); return false;">
+            <i class="fa-solid fa-download"></i>
+            Download Resume
+          </a>
+          <p class="contact-response-time">Response time: 48 hours</p>
+        </div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/zahidm" class="contact-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/mzahiddev404" class="contact-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://x.com/logmzahid" class="contact-link" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-twitter"></i>
+            <span>Twitter</span>
+          </a>
+        </div>
       </section>
     </main>
 
